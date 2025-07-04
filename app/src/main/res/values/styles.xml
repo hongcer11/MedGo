@@ -1,2 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources></resources>
+<resources>
+    <style name="TextHeading1">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:lineHeight">33.6sp</item> <!-- 120% of 28sp -->
+        <item name="android:letterSpacing">0.02</item> <!-- 2% letter spacing -->
+        <item name="android:textStyle">normal</item> <!-- SemiBold là font weight -->
+    </style>
+    <!-- Heading 2 -->
+    <style name="TextHeading2">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:lineHeight">28.8sp</item> <!-- 120% of 24 -->
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Heading 3 -->
+    <style name="TextHeading3">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:lineHeight">24sp</item> <!-- 120% of 20 -->
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Heading 4 -->
+    <style name="TextHeading4">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:lineHeight">21.6sp</item> <!-- 120% of 18 -->
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <!-- Body1 / 600 - SemiBold -->
+    <style name="TextBody1_600">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">19.2sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body1 / 500 - Medium -->
+    <style name="TextBody1_500">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">19.2sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body1 / 400 - Regular -->
+    <style name="TextBody1_400">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:lineHeight">19.2sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <!-- Body2 / 600 - SemiBold -->
+    <style name="TextBody2_600">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">16.8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body2 / 500 - Medium -->
+    <style name="TextBody2_500">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">16.8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body2 / 400 - Regular -->
+    <style name="TextBody2_400">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineHeight">16.8sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <!-- Body3 / 600 - SemiBold -->
+    <style name="TextBody3_600">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">14.4sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body3 / 500 - Medium -->
+    <style name="TextBody3_500">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">14.4sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body3 / 400 - Regular -->
+    <style name="TextBody3_400">
+        <item name="android:fontFamily">@font/montserrat_regular</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:lineHeight">14.4sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:textStyle">normal</item>
+    </style>
+    <!-- Body4 / 600 - SemiBold -->
+    <style name="TextBody4_600">
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:lineHeight">11.2sp</item>
+        <item name="android:letterSpacing">0.08</item> <!-- 8% -->
+        <item name="android:textStyle">normal</item>
+    </style>
+
+    <!-- Body4 / 500 - Medium -->
+    <style name="TextBody4_500">
+        <item name="android:fontFamily">@font/montserrat_medium</item>
+        <item name="android:textSize">8sp</item>
+        <item name="android:lineHeight">11.2sp</item>
+        <item name="android:letterSpacing">0.02</item> <!-- 2% -->
+        <item name="android:textStyle">normal</item>
+    </style>
+
+
+</resources>
