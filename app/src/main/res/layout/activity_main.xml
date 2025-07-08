@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBaseline_toTopOf="@id/navbar">
     </RelativeLayout>
-    
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navbar"
         android:layout_width="match_parent"
@@ -29,6 +29,5 @@
         app:itemTextColor="@color/bottom_nav_selector"
         app:labelVisibilityMode="labeled"
         android:layout_marginTop="3dp"/>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
