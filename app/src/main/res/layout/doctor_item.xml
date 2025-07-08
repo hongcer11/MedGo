@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="16dp"
+    android:layout_marginEnd="16dp"
+    android:layout_marginBottom="16dp"
+    app:cardCornerRadius="12dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="16dp">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/doctorImageContainer"
+            android:layout_width="109dp"
+            android:layout_height="109dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/doctorImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/doctor_default"
+                tools:src="@tools:sample/avatars"
+                android:contentDescription="Ảnh bác sĩ" />
+        </androidx.cardview.widget.CardView>
+
+        <TextView
+            android:id="@+id/doctorName"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:text="BS Tạ Đình Phong"
+            android:textColor="@color/black_primary"
+            style="@style/TextHeading4"
+            app:layout_constraintEnd_toStartOf="@+id/favoriteIcon"
+            app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
+            app:layout_constraintTop_toTopOf="@+id/doctorImageContainer"
+            app:layout_constraintBottom_toTopOf="@+id/specialtyText"
+            app:layout_constraintVertical_chainStyle="packed" />
+
+        <ImageView
+            android:id="@+id/favoriteIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/heart_outline"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/doctorName"
+            app:layout_constraintBottom_toBottomOf="@+id/doctorName"
+            android:contentDescription="Thêm vào yêu thích" />
+
+        <ImageView
+            android:id="@+id/specialtyIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/icon_hospital"
+            app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
+            app:layout_constraintTop_toBottomOf="@+id/doctorName"
+            android:contentDescription="Biểu tượng chuyên khoa" />
+
+        <TextView
+            android:id="@+id/specialtyText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Khoa Da liễu"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/specialtyIcon"
+            app:layout_constraintTop_toTopOf="@+id/specialtyIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/specialtyIcon" />
+
+        <ImageView
+            android:id="@+id/hospitalIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/icon_hospital"
+            app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
+            app:layout_constraintTop_toBottomOf="@+id/specialtyIcon"
+            android:contentDescription="Biểu tượng bệnh viện" />
+
+        <TextView
+            android:id="@+id/hospitalText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:text="Bệnh viện Da liễu TP.HCM"
+            android:textColor="@android:color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/hospitalIcon"
+            app:layout_constraintTop_toTopOf="@+id/hospitalIcon"
+            app:layout_constraintBottom_toBottomOf="@+id/hospitalIcon" />
+
+        <ImageView
+            android:id="@+id/calendarIcon"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:src="@drawable/icon_hospital"
+
+            app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
+            app:layout_constraintTop_toBottomOf="@+id/hospitalIcon"
+            android:contentDescription="Biểu tượng lịch" />
+
+        <LinearLayout
+            android:id="@+id/workingDaysLayout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/calendarIcon"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/calendarIcon"
+            app:layout_constraintTop_toTopOf="@+id/calendarIcon"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
