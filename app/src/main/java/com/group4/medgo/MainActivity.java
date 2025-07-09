@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.group4.data.db.SQLiteHelper;
 import com.group4.ui.common.DoctorFragment;
-import com.group4.ui.common.HospitalFragment;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -22,8 +21,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Hiển thị DoctorFragment
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(android.R.id.content, new DoctorFragment())
-//                .commit();
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new DoctorFragment())
+                .commit();
     }
 }
