@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        android:background="@color/white_primary">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/doctorImageContainer"
@@ -205,6 +206,7 @@
             android:textAllCaps="false"
             style="@style/TextBody1_600"
             android:text="Đặt khám"
+            android:gravity="center"
             android:textColor="@color/white_primary"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

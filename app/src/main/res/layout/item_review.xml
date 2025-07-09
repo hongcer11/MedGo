@@ -6,15 +6,16 @@
     android:layout_height="wrap_content"
     android:padding="16dp"
     android:layout_marginEnd="8dp"
-    android:background="@drawable/round_corner_background"> <com.google.android.material.imageview.ShapeableImageView
+    android:background="@drawable/round_corner_background">
+
+    <com.google.android.material.imageview.ShapeableImageView
     android:id="@+id/imageViewAvatar"
     android:layout_width="40dp"
     android:layout_height="40dp"
     android:scaleType="centerCrop"
     android:src="@drawable/avatar"
     app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent"
-    tools:srcCompat="@tools:sample/avatars"/>
+    app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textViewName"
@@ -38,18 +39,35 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@id/textViewName" />
 
-    <RatingBar
-        android:layout_marginTop="5dp"
+    <LinearLayout
         android:id="@+id/ratingBar"
-        style="?android:attr/ratingBarStyleSmall"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:numStars="5"
-        android:rating="5"
-        android:stepSize="1"
-        android:progressTint="#FFD700" android:layout_marginStart="16dp"
-        app:layout_constraintStart_toEndOf="@id/imageViewAvatar"
-        app:layout_constraintTop_toBottomOf="@id/textViewName" />
+        android:layout_marginStart="56dp"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
+        app:layout_constraintTop_toBottomOf="@+id/textViewName">
+
+        <ImageView
+            style="@style/RatingStar"
+            android:src="@drawable/star" />
+
+        <ImageView
+            style="@style/RatingStar"
+            android:src="@drawable/star" />
+
+        <ImageView
+            style="@style/RatingStar"
+            android:src="@drawable/star" />
+
+        <ImageView
+            style="@style/RatingStar"
+            android:src="@drawable/star" />
+
+        <ImageView
+            style="@style/RatingStar"
+            android:src="@drawable/star" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textViewReviewContent"

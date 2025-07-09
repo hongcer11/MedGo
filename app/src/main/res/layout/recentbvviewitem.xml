@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#F8F9FA">
@@ -20,7 +19,8 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/white_primary">
 
         <ImageView
             android:id="@+id/hospitalImage"
@@ -137,6 +137,7 @@
             android:paddingVertical="12dp"
             android:textAllCaps="false"
             style="@style/TextBody1_600"
+            android:gravity="center"
             android:text="Đặt khám"
             android:textColor="@color/white_primary"
             app:layout_constraintEnd_toEndOf="parent"
@@ -156,6 +157,7 @@
             android:paddingVertical="12dp"
             android:textColor="@color/primary_700"
             android:text="Xem chi tiết"
+            android:gravity="center"
             style="@style/TextBody1_600"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
