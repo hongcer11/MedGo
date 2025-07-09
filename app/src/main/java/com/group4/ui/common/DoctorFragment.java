@@ -43,13 +43,22 @@ public class DoctorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         loadDoctorsFromDatabase();
     }
+
     private void loadDoctorsFromDatabase() {
         SQLiteHelper dbHelper = new SQLiteHelper(requireContext());
         try {
             dbHelper.createDatabaseIfNeeded();
             dbHelper.openDatabase();
             SQLiteDatabase db = dbHelper.getDatabase();
-            Cursor cursor = db.rawQuery("SELECT * FROM Doctors", null);
+
+            String query = "SELECT d.doctor_id, d.full_name, d.specialization, d.title, d.hospital_id, d.department_id, d.img_doctor, " +
+                    "dep.department_name, hos.hospital_name " +
+                    "FROM doctors d " +
+                    "JOIN departments dep ON d.department_id = dep.department_id " +
+                    "JOIN hospitals_departments hd ON d.department_id = hd.department_id AND d.hospital_id = hd.hospital_id " +
+                    "JOIN hospitals hos ON d.hospital_id = hos.hospital_id";
+
+            Cursor cursor = db.rawQuery(query, null);
             while (cursor.moveToNext()) {
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("doctor_id"));
                 String fullName = cursor.getString(cursor.getColumnIndexOrThrow("full_name"));
@@ -58,7 +67,10 @@ public class DoctorFragment extends Fragment {
                 int hospitalId = cursor.getInt(cursor.getColumnIndexOrThrow("hospital_id"));
                 int departmentId = cursor.getInt(cursor.getColumnIndexOrThrow("department_id"));
                 String image = cursor.getString(cursor.getColumnIndexOrThrow("img_doctor"));
-                Doctor doctor = new Doctor(id, fullName, specialization, title, hospitalId, departmentId, image);
+                String departmentName = cursor.getString(cursor.getColumnIndexOrThrow("department_name"));
+                String hospitalName = cursor.getString(cursor.getColumnIndexOrThrow("hospital_name"));
+
+                Doctor doctor = new Doctor(id, fullName, specialization, title, hospitalId, departmentId, image, hospitalName, departmentName);
                 doctorList.add(doctor);
                 Log.d("DoctorFragment", "Doctor loaded: " + fullName);
             }

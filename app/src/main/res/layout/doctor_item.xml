@@ -108,6 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
+            android:maxLines="1"
+            android:ellipsize="end"
             style="@style/TextBody3_500"
             android:text="Bệnh viện Da liễu TP.HCM"
             android:textColor="@android:color/black"
