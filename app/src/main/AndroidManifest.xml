@@ -13,6 +13,9 @@
         android:theme="@style/Theme.MedGo"
         tools:targetApi="31">
         <activity
+            android:name="com.group4.ui.booking.Booking1Activity"
+            android:exported="false" />
+        <activity
             android:name="com.group4.ui.SearchActivity.SearchActivity"
             android:exported="false" />
         <activity

@@ -43,14 +43,12 @@ public class DoctorFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
         loadDoctorsFromDatabase();
     }
-
     private void loadDoctorsFromDatabase() {
         SQLiteHelper dbHelper = new SQLiteHelper(requireContext());
         try {
             dbHelper.createDatabaseIfNeeded();
             dbHelper.openDatabase();
             SQLiteDatabase db = dbHelper.getDatabase();
-
             Cursor cursor = db.rawQuery("SELECT * FROM Doctors", null);
             while (cursor.moveToNext()) {
                 int id = cursor.getInt(cursor.getColumnIndexOrThrow("doctor_id"));
@@ -60,10 +58,8 @@ public class DoctorFragment extends Fragment {
                 int hospitalId = cursor.getInt(cursor.getColumnIndexOrThrow("hospital_id"));
                 int departmentId = cursor.getInt(cursor.getColumnIndexOrThrow("department_id"));
                 String image = cursor.getString(cursor.getColumnIndexOrThrow("img_doctor"));
-
                 Doctor doctor = new Doctor(id, fullName, specialization, title, hospitalId, departmentId, image);
                 doctorList.add(doctor);
-
                 Log.d("DoctorFragment", "Doctor loaded: " + fullName);
             }
 

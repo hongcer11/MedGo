@@ -128,7 +128,17 @@
         <item name="android:letterSpacing">0.02</item> <!-- 2% -->
         <item name="android:textStyle">normal</item>
     </style>
-
+    <style name="Button.Primary" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/btn_solid_blue</item> <!-- nền bo tròn màu xanh -->
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:fontFamily">@font/montserrat_semibold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:letterSpacing">0.02</item>
+        <item name="android:paddingStart">24dp</item>
+        <item name="android:paddingEnd">24dp</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:gravity">center</item>
+    </style>
 
     <!-- ngôi sao -->
         <style name="RatingStar">
