@@ -14,7 +14,8 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingBottom="16dp">
+        android:paddingBottom="16dp"
+        android:background="@color/white_primary">
 
         <androidx.cardview.widget.CardView
             android:id="@+id/doctorImageContainer"
@@ -61,7 +62,8 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/doctorName"
             app:layout_constraintBottom_toBottomOf="@+id/doctorName"
-            android:contentDescription="Thêm vào yêu thích" />
+            android:contentDescription="Thêm vào yêu thích"
+            app:tint="@color/black_primary" />
 
         <ImageView
             android:id="@+id/specialtyIcon"
@@ -69,7 +71,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/icon_hospital"
+            android:src="@drawable/stethoscope"
             app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
             app:layout_constraintTop_toBottomOf="@+id/doctorName"
             android:contentDescription="Biểu tượng chuyên khoa" />
@@ -77,6 +79,7 @@
         <TextView
             android:id="@+id/specialtyText"
             android:layout_width="0dp"
+            style="@style/TextBody3_500"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
@@ -105,6 +108,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:layout_marginEnd="16dp"
+            style="@style/TextBody3_500"
             android:text="Bệnh viện Da liễu TP.HCM"
             android:textColor="@android:color/black"
             android:textSize="14sp"
@@ -119,8 +123,7 @@
             android:layout_height="20dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:src="@drawable/icon_hospital"
-
+            android:src="@drawable/calendar"
             app:layout_constraintStart_toEndOf="@+id/doctorImageContainer"
             app:layout_constraintTop_toBottomOf="@+id/hospitalIcon"
             android:contentDescription="Biểu tượng lịch" />
@@ -135,8 +138,79 @@
             app:layout_constraintBottom_toBottomOf="@+id/calendarIcon"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/calendarIcon"
-            app:layout_constraintTop_toTopOf="@+id/calendarIcon"/>
+            app:layout_constraintTop_toTopOf="@+id/calendarIcon">
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_blue_day_bg"
+                android:paddingStart="4dp"
+                android:paddingTop="4dp"
+                android:text="T2"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                style="@style/TextBody4_600"
+                android:textColor="@color/white_primary"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_blue_day_bg"
+                android:paddingStart="4dp"
+                android:paddingTop="4dp"
+                android:text="T3"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                style="@style/TextBody4_600"
+                android:textColor="@color/white_primary"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_blue_day_bg"
+                android:paddingStart="4dp"
+                android:paddingTop="4dp"
+                android:text="T5"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                style="@style/TextBody4_600"
+                android:textColor="@color/white_primary"
+                android:layout_marginEnd="4dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/rounded_blue_day_bg"
+                android:paddingStart="4dp"
+                android:paddingTop="4dp"
+                android:text="T7"
+                android:paddingEnd="4dp"
+                android:paddingBottom="2dp"
+                style="@style/TextBody4_600"
+                android:textColor="@color/white_primary"
+                android:layout_marginEnd="4dp" />
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnBookAppointmentBS"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/btn_solid_blue"
+            android:paddingVertical="12dp"
+            android:textAllCaps="false"
+            style="@style/TextBody1_600"
+            android:text="Đặt khám"
+            android:gravity="center"
+            android:textColor="@color/white_primary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/workingDaysLayout" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.cardview.widget.CardView>
