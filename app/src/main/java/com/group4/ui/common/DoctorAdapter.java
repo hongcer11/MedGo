@@ -33,7 +33,7 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
     @NonNull
     @Override
     public DoctorViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(context).inflate(R.layout.item_doctor, parent, false);
+        View view = LayoutInflater.from(context).inflate(R.layout.doctor_item, parent, false);
         return new DoctorViewHolder(view);
     }
 
@@ -41,8 +41,8 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
     public void onBindViewHolder(@NonNull DoctorViewHolder holder, int position) {
         Doctor doctor = doctorList.get(position);
         holder.txtFullName.setText(doctor.getTitle() + " " + doctor.getFullName());
-        holder.txtSpecialization.setText("Khoa " + doctor.getSpecialization());
-        holder.txtHospital.setText("Bệnh viện Da liễu TP.HCM");
+        holder.txtSpecialization.setText(doctor.getDepartmentName());
+        holder.txtHospital.setText(doctor.getHospitalName());
 
         try {
             InputStream inputStream = context.getAssets().open("images/doctors/" + doctor.getImgDoctor());
@@ -66,10 +66,10 @@ public class DoctorAdapter extends RecyclerView.Adapter<DoctorAdapter.DoctorView
 
         public DoctorViewHolder(@NonNull View itemView) {
             super(itemView);
-            txtFullName = itemView.findViewById(R.id.txtFullName);
-            txtSpecialization = itemView.findViewById(R.id.txtSpecialization);
-            txtHospital = itemView.findViewById(R.id.txtHospital);
-            imgDoctor = itemView.findViewById(R.id.imgDoctor);
+            txtFullName = itemView.findViewById(R.id.doctorName);
+            txtSpecialization = itemView.findViewById(R.id.specialtyText);
+            txtHospital = itemView.findViewById(R.id.hospitalText);
+            imgDoctor = itemView.findViewById(R.id.doctorImage);
         }
     }
 }

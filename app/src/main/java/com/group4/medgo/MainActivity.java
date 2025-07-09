@@ -11,7 +11,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
         // Khởi tạo database nếu chưa có
         SQLiteHelper dbHelper = new SQLiteHelper(this);
@@ -21,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//        // Hiển thị DoctorFragment
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(android.R.id.content, new DoctorFragment())
-//                .commit();
+        // Hiển thị DoctorFragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new DoctorFragment())
+                .commit();
     }
 }
