@@ -1,0 +1,351 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:background="@color/neutral_0"
+    tools:context="com.group4.ui.user.InfoUserActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/btnBack"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_gravity="center_vertical"
+                android:contentDescription="Back"
+                android:src="@drawable/arrow_left" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:text="Thông tin tài khoản"
+                android:textSize="24sp" />
+
+            <View
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_weight="1" />
+        </LinearLayout>
+
+        <!--    họ và tên -->
+
+        <TextView
+            android:id="@+id/tvname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Họ và tên"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text=" *"
+            android:textColor="@color/danger_700"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/tvname"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
+
+        <EditText
+            android:id="@+id/edtName"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Nhập họ và tên"
+            android:padding="12dp"
+            android:textColorHint="@color/black_secondary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvname" />
+
+        <!--    điền email -->
+        <TextView
+            android:id="@+id/tvemail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Email"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtName" />
+
+        <EditText
+            android:id="@+id/edtEmail"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="Nhập email"
+            android:padding="12dp"
+            android:textColorHint="@color/black_secondary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvemail" />
+
+        <TextView
+            android:id="@+id/tvEmailError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Số điện thoại không đúng"
+            android:textColor="@color/danger_700"
+            android:textSize="12sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+        <TextView
+            android:id="@+id/tvngaysinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Ngày sinh"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailError" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="92dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text=" *"
+            android:textColor="@color/danger_700"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvEmailError" />
+
+        <EditText
+            android:id="@+id/edtngaysinh"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:hint="dd/mm/yyyy"
+            android:padding="12dp"
+            android:textColorHint="@color/black_secondary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvngaysinh" />
+
+        <ImageView
+            android:id="@+id/ivcalender"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/calendar"
+            app:layout_constraintEnd_toEndOf="@+id/edtngaysinh"
+            app:layout_constraintTop_toTopOf="@+id/edtngaysinh" />
+
+        <TextView
+            android:id="@+id/tvgioitinh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Giới tính"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtngaysinh" />
+
+        <EditText
+            android:id="@+id/edtgioitinh"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:padding="12dp"
+            android:textSize="14sp"
+            android:hint="Chọn giới tính"
+            android:textColorHint="@color/black_secondary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvgioitinh" />
+
+        <ImageView
+            android:id="@+id/ivexpand_n"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/expand_n"
+            app:layout_constraintEnd_toEndOf="@+id/edtgioitinh"
+            app:layout_constraintTop_toTopOf="@+id/edtgioitinh" />
+
+        <TextView
+            android:id="@+id/tvpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Mật khẩu"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtgioitinh" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text=" *"
+            android:textColor="@color/danger_700"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/tvpass"
+            app:layout_constraintTop_toBottomOf="@+id/edtgioitinh" />
+
+        <EditText
+            android:id="@+id/edtPassword"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:hint="Nhập mật khẩu"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/black_secondary"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvpass"/>
+
+        <ImageView
+            android:id="@+id/imghidePassword"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/eye_slash"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/edtPassword"
+            app:layout_constraintTop_toTopOf="@+id/edtPassword" />
+
+        <TextView
+            android:id="@+id/tvpassagain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Nhập lại mật khẩu"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+        <TextView
+            android:id="@+id/saopassagain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text=" *"
+            android:textColor="@color/danger_700"
+            android:textSize="18sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/tvpassagain"
+            app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+        <EditText
+            android:id="@+id/edtPasswordagain"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@drawable/bg_edittext_default"
+            android:fontFamily="@font/montserrat_regular"
+            android:gravity="center_vertical"
+            android:hint="Nhập mật khẩu"
+            android:inputType="textPassword"
+            android:paddingStart="12dp"
+            android:textColorHint="@color/black_secondary"
+            android:textSize="14sp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvpassagain" />
+
+        <ImageView
+            android:id="@+id/imghidePassword2"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/eye_slash"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/edtPasswordagain"
+            app:layout_constraintTop_toTopOf="@+id/edtPasswordagain" />
+
+        <TextView
+            android:id="@+id/tvErrorpass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="Mật khẩu không trùng nhau"
+            android:textColor="@color/danger_700"
+            android:textSize="12sp"
+            android:visibility="gone"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPasswordagain" />
+
+        <Button
+            android:id="@+id/btnRegister_info"
+            android:layout_width="match_parent"
+            android:layout_height="43dp"
+            android:background="@drawable/btn_solid_blue"
+            android:fontFamily="@font/montserrat_semibold"
+            android:gravity="center"
+            android:text="Đăng nhập"
+            android:textColor="@color/white_primary"
+            android:textSize="16sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtPasswordagain" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

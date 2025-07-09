@@ -3,5 +3,10 @@
     <style name="Base.Theme.MedGo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+
+        <item name="colorPrimary">#ffffff</item> <!-- Màu xanh đậm -->
+        <item name="colorPrimaryVariant">#2F6FED</item>
+        <item name="colorOnPrimary">#2F6FED</item>
+        <item name="colorSecondary">#2F6FED</item>
     </style>
 </resources>
