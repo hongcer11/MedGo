@@ -92,18 +92,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/headerLayout"
             android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp">
-
-            <ImageView
-                android:id="@+id/searchIcon"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="12dp"
-                android:contentDescription="Biểu tượng tìm kiếm"
-                android:src="@drawable/search_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintBottom_toBottomOf="parent" />
+            android:layout_marginEnd="16dp"
+            android:clickable="true"    android:focusable="true"     android:focusableInTouchMode="true"> <ImageView
+            android:id="@+id/searchIcon"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Biểu tượng tìm kiếm"
+            android:src="@drawable/search_normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
 
             <EditText
                 android:id="@+id/searchEditText"
@@ -113,7 +112,11 @@
                 android:layout_marginEnd="8dp"
                 android:background="@android:color/transparent"
                 android:hint="Bạn cần tìm gì...?"
-                android:inputType="text"
+                android:inputType="none"
+                android:focusable="false"
+                android:clickable="false"
+                android:longClickable="false"
+                android:cursorVisible="false"
                 android:maxLines="1"
                 android:singleLine="true"
                 android:textColor="@color/black_primary"
@@ -154,6 +157,7 @@
                 android:columnCount="3"
                 android:padding="12dp"
                 android:rowCount="2"
+                android:background="@color/white_primary"
                 style="@style/TextBody3_500">
 
                 <LinearLayout

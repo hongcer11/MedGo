@@ -34,23 +34,6 @@
 
         <TextView
             style="@style/TextBody2_500"
-            android:id="@+id/tag2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:background="@drawable/bg_search_tag"
-            android:paddingStart="12dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="8dp"
-            android:text="Mẩn ngứa"
-            android:textColor="#2F6FED"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/tag1"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,24 +48,6 @@
             android:textSize="14sp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tag1" />
-
-        <TextView
-            style="@style/TextBody2_500"
-            android:id="@+id/tag4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:background="@drawable/bg_search_tag"
-            android:paddingStart="12dp"
-            android:paddingTop="8dp"
-            android:paddingEnd="12dp"
-            android:paddingBottom="8dp"
-            android:text="Bệnh viện chấn thương ở quận 7"
-            android:textColor="#2F6FED"
-            android:textSize="14sp"
-            app:layout_constraintStart_toEndOf="@+id/tag3"
-            app:layout_constraintTop_toBottomOf="@+id/tag2" />
 
         <TextView
             style="@style/TextBody2_500"
@@ -102,12 +67,12 @@
             app:layout_constraintTop_toBottomOf="@+id/tag3" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag6"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="7dp"
             android:background="@drawable/bg_search_tag"
             android:paddingStart="12dp"
             android:paddingTop="8dp"
@@ -117,7 +82,7 @@
             android:textColor="#2F6FED"
             android:textSize="14sp"
             app:layout_constraintStart_toEndOf="@+id/tag5"
-            app:layout_constraintTop_toBottomOf="@+id/tag4" />
+            app:layout_constraintTop_toBottomOf="@+id/tag1" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>  <!-- TODO: Update blank fragment layout -->
 
