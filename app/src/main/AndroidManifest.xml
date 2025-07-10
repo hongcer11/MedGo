@@ -34,10 +34,10 @@
             android:name="com.group4.ui.user.InfoUserActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.group4.ui.user.LoginPasswordActivity"
             android:exported="false" />
         <activity
-            android:name="com.group4.ui.user.LoginPasswordActivity"
+            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
