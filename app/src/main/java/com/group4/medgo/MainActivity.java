@@ -4,6 +4,7 @@ import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.group4.data.db.SQLiteHelper;
+import com.group4.medgo.homepage.HomeFragment;
 import com.group4.ui.common.DoctorFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -21,9 +22,9 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Hiển thị DoctorFragment
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(android.R.id.content, new DoctorFragment())
-//                .commit();
+        // Hiển thị Fragment
+        getSupportFragmentManager().beginTransaction()
+                .replace(android.R.id.content, new HomeFragment())
+                .commit();
     }
 }

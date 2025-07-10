@@ -11,6 +11,11 @@ import android.view.ViewGroup;
 
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.FragmentHomeBinding;
+import com.group4.models.Partner;
+import com.group4.ui.common.PartnerAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,6 +35,9 @@ public class HomeFragment extends Fragment {
     private String mParam2;
 
     FragmentHomeBinding binding;
+    PartnerAdapter adapter;
+    ArrayList<Partner> partners;
+
 
     public HomeFragment() {
         // Required empty public constructor
@@ -68,9 +76,24 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false);
 
+
+        partners = new ArrayList<>();
+        partners.add(new Partner(R.drawable.bv_choray, "Bệnh viện Chợ Rẫy"));
+        partners.add(new Partner(R.drawable.bv_tudu, "Bệnh viện Từ Dũ"));
+        partners.add(new Partner(R.drawable.bv_dalieu, "Bệnh viện Da liễu TP.HCM"));
+        partners.add(new Partner(R.drawable.bv_yduoc, "Bệnh viện Y dược TP.HCM"));
+        partners.add(new Partner(R.drawable.bv_ungbuou, "Bệnh viện Ung bướu TP.HCM"));
+        partners.add(new Partner(R.drawable.bv_nhandan, "Bệnh viện Nhân dân 115"));
+        partners.add(new Partner(R.drawable.bv_nhidong1, "Bệnh viện Nhi Đồng 1"));
+        partners.add(new Partner(R.drawable.bv_chanthuongchinhhinh, "Bệnh viện Chấn thương chỉnh hình"));
+        partners.add(new Partner(R.drawable.bv_hoanmythuduc, "Bệnh viện Quốc tế Hoàn Mỹ Thủ Đức"));
+
         binding.recyclerPartner.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
         );
+        adapter = new PartnerAdapter(getContext(), partners);
+        binding.recyclerPartner.setAdapter(adapter);
+
 
         binding.recyclerNews.setLayoutManager(
                 new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)

@@ -18,5 +18,6 @@
         android:layout_height="wrap_content"
         android:text="Bệnh viện Chợ Rẫy"
         android:gravity="center"
-        style="@style/TextBody3_500" />
+        style="@style/TextBody3_500"
+        android:textColor="@color/neutral_1000"/>
 </LinearLayout>
