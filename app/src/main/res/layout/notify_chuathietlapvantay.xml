@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="312dp"
-    android:layout_height="245dp"
+    android:layout_height="265dp"
     android:layout_gravity="center"
     android:background="@drawable/bg_dialog">
 
@@ -48,13 +48,12 @@
 
     <Button
         android:id="@+id/btnCancel"
-        android:layout_width="126dp"
-        android:layout_height="32dp"
+        android:layout_width="127dp"
+        android:layout_height="40dp"
         android:layout_marginStart="92dp"
         android:layout_marginTop="8dp"
         android:background="@drawable/btn_nosolid_strokeblue"
         android:fontFamily="@font/montserrat_semibold"
-        android:gravity="center"
         android:text="Hủy"
         android:textColor="@color/primary_700"
         android:textSize="16sp"
