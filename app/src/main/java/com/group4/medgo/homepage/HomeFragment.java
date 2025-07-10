@@ -3,12 +3,14 @@ package com.group4.medgo.homepage;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.group4.medgo.R;
+import com.group4.medgo.databinding.FragmentHomeBinding;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +18,7 @@ import com.group4.medgo.R;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
+
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -25,6 +28,8 @@ public class HomeFragment extends Fragment {
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+
+    FragmentHomeBinding binding;
 
     public HomeFragment() {
         // Required empty public constructor
@@ -61,6 +66,16 @@ public class HomeFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_home, container, false);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+
+        binding.recyclerPartner.setLayoutManager(
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
+        );
+
+        binding.recyclerNews.setLayoutManager(
+                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
+        );
+
+        return binding.getRoot();
     }
 }
