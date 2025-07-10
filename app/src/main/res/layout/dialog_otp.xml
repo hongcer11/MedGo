@@ -81,8 +81,8 @@
 
         <Button
             android:id="@+id/btnCancel"
-            android:layout_width="126dp"
-            android:layout_height="32dp"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
             android:background="@drawable/btn_nosolid_strokeblue"
             android:gravity="center"
             android:text="Hủy"
@@ -96,8 +96,8 @@
 
         <Button
             android:id="@+id/btnConfirm"
-            android:layout_width="126dp"
-            android:layout_height="32dp"
+            android:layout_width="127dp"
+            android:layout_height="40dp"
             android:text="Xác nhận"
             android:textSize="16sp"
             android:fontFamily="@font/montserrat_semibold"
