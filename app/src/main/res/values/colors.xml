@@ -47,4 +47,7 @@
     <color name="neutral_800">#23272F</color>
     <color name="neutral_900">#1B1F27</color>
     <color name="neutral_1000">#0A0D14</color>
+
+    <string name="black_primary_hex">#1D2433</string>
+    <string name="secondary_black_hex">#4A505C</string>
 </resources>
