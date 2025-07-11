@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:fontFamily="@font/montserrat_semibold"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Danh sách phiếu khám"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:layout_marginBottom="5dp" />
+
+    <!-- Các nút tab -->
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fillViewport="true"
+        android:scrollbars="none"
+        android:layout_marginBottom="5dp">
+
+        <LinearLayout
+
+            android:id="@+id/tabButtonsContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <com.google.android.material.button.MaterialButton
+                android:fontFamily="@font/montserrat_medium"
+                android:id="@+id/btn_paid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã thanh toán"
+                android:textAllCaps="false"
+                android:textColor="#1A49D9"
+                android:backgroundTint="#FFFFFF"
+                app:strokeColor="#1A49D9"
+                app:strokeWidth="1dp"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="8dp"/>
+            <com.google.android.material.button.MaterialButton
+                android:fontFamily="@font/montserrat_medium"
+                android:id="@+id/btn_unpaid"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Chưa thanh toán"
+                android:textAllCaps="false"
+                android:textColor="#1A49D9"
+                android:backgroundTint="#FFFFFF"
+                app:strokeColor="#1A49D9"
+                app:strokeWidth="1dp"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:fontFamily="@font/montserrat_medium"
+                android:id="@+id/btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã khám"
+                android:textAllCaps="false"
+                android:textColor="#1A49D9"
+                android:backgroundTint="#FFFFFF"
+                app:strokeColor="#1A49D9"
+                app:strokeWidth="1dp"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="8dp"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:fontFamily="@font/montserrat_medium"
+                android:id="@+id/btn_cancelled"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đã hủy"
+                android:textAllCaps="false"
+                android:textColor="#1A49D9"
+                android:backgroundTint="#FFFFFF"
+                app:strokeColor="#1A49D9"
+                app:strokeWidth="1dp"
+                app:cornerRadius="20dp"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+    </HorizontalScrollView>
+
+    <!-- Khung fragment con hiển thị danh sách tương ứng -->
+    <FrameLayout
+        android:id="@+id/appointment_tab_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+
+</LinearLayout>

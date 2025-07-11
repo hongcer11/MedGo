@@ -1,8 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.group4.ui.SearchActivity.TopSearchFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,14 +12,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteY="8dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag1"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@drawable/bg_search_tag"
@@ -33,8 +33,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag2"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -50,8 +50,8 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag3"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -67,8 +67,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tag1" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag4"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -85,8 +85,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tag2" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag5"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -102,8 +102,8 @@
             app:layout_constraintTop_toBottomOf="@+id/tag3" />
 
         <TextView
-            style="@style/TextBody2_500"
             android:id="@+id/tag6"
+            style="@style/TextBody2_500"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -119,6 +119,6 @@
             app:layout_constraintStart_toEndOf="@+id/tag5"
             app:layout_constraintTop_toBottomOf="@+id/tag4" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>  <!-- TODO: Update blank fragment layout -->
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

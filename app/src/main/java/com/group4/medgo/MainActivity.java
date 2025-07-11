@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
 import com.group4.data.db.SQLiteHelper;
+
 import com.group4.medgo.homepage.HomeFragment;
 import com.group4.ui.common.DoctorFragment;
 
@@ -30,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(android.R.id.content, new HomeFragment())
 //                .commit();
+
     }
 }

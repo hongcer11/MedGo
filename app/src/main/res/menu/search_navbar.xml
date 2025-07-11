@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/mncsyt"
+        android:title="CSYT"
+        android:icon="@drawable/microphone1"/>
+    <item android:id="@+id/mnBS"
+        android:title="Bác sĩ"
+        android:icon="@drawable/microphone1"/>
+    <item android:id="@+id/mnCk"
+        android:title="Chuyên khoa"
+        android:icon="@drawable/microphone1"/>
+</menu>
