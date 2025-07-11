@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
+<<<<<<< Updated upstream
     android:shape="rectangle"
     >
 
@@ -7,3 +8,12 @@
 
     <corners android:radius="50dp" />
 </shape>
+=======
+    android:shape="rectangle">
+
+    <solid android:color="@color/primary_700" /> <!-- Màu xanh cố định -->
+
+    <corners android:radius="50dp" /> <!-- Bo góc 12dp -->
+
+</shape>
+>>>>>>> Stashed changes
