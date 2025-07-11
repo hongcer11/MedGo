@@ -1,10 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/homeScroll"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white_primary">
+    android:background="@color/white_primary"
+    android:fillViewport="true"
+    android:paddingBottom="48dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -33,7 +36,6 @@
             android:paddingStart="16dp"
             android:paddingEnd="16dp">
 
-            <!-- Logo -->
             <ImageView
                 android:id="@+id/logoImage"
                 android:layout_width="48dp"
@@ -43,7 +45,6 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
-            <!-- Nội dung text -->
             <LinearLayout
                 android:id="@+id/textContainer"
                 android:layout_width="0dp"
@@ -58,6 +59,7 @@
                 <TextView
                     android:id="@+id/tvWelcome"
                     style="@style/TextBody2_600"
+                    android:textColor="@color/black_primary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="MedGo xin chào," />
@@ -65,12 +67,12 @@
                 <TextView
                     android:id="@+id/tvlogin"
                     style="@style/TextBody2_600"
+                    android:textColor="@color/black_primary"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Đăng ký / Đăng nhập" />
             </LinearLayout>
 
-            <!-- Icon thông báo -->
             <ImageView
                 android:id="@+id/notificationIcon"
                 android:layout_width="24dp"
@@ -88,21 +90,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:background="@drawable/bg_edittext_default"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/headerLayout"
             android:layout_marginStart="16dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"    android:focusable="true"     android:focusableInTouchMode="true"> <ImageView
-            android:id="@+id/searchIcon"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_marginStart="12dp"
-            android:contentDescription="Biểu tượng tìm kiếm"
-            android:src="@drawable/search_normal"
+            android:clickable="true"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/headerLayout">
+
+            <ImageView
+                android:id="@+id/searchIcon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:contentDescription="Biểu tượng tìm kiếm"
+                android:src="@drawable/search_normal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <EditText
                 android:id="@+id/searchEditText"
@@ -119,6 +125,7 @@
                 android:cursorVisible="false"
                 android:maxLines="1"
                 android:singleLine="true"
+                style="@style/TextBody2_500"
                 android:textColor="@color/black_primary"
                 android:textColorHint="@color/black_secondary"
                 app:layout_constraintStart_toEndOf="@id/searchIcon"
@@ -138,7 +145,6 @@
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-
         <!-- 3. Khung các chức năng -->
         <androidx.cardview.widget.CardView
             android:id="@+id/cardFunctions"
@@ -147,6 +153,10 @@
             android:layout_marginTop="42dp"
             app:cardCornerRadius="32dp"
             app:cardElevation="2dp"
+            app:cardBackgroundColor="@color/white_primary"
+            android:background="@drawable/cardfunctions_bg"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchBarContainer">
@@ -156,9 +166,7 @@
                 android:layout_height="wrap_content"
                 android:columnCount="3"
                 android:padding="12dp"
-                android:rowCount="2"
-                android:background="@color/white_primary"
-                style="@style/TextBody3_500">
+                android:rowCount="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -178,7 +186,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Đặt lịch"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -200,7 +209,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Thanh toán viện phí"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -222,7 +232,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Thanh toán tiền thuốc"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -244,7 +255,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="GoLive"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -267,7 +279,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Nhắc nhở uống thuốc"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -289,7 +302,8 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Lịch tái khám"
-                        android:textSize="12sp"
+                        style="@style/TextBody3_500"
+                        android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
 
@@ -299,10 +313,9 @@
         <!-- 4. Đối tác -->
 
         <TextView
-            android:id="@+id/tvPartners"
+            android:id="@+id/tvPartner"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="ĐƠN VỊ TIN TƯỞNG HỢP TÁC VÀ ĐỒNG HÀNH"
@@ -314,40 +327,82 @@
             app:layout_constraintTop_toBottomOf="@id/cardFunctions" />
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerPartners"
+            android:id="@+id/recyclerPartner"
+            android:contentDescription="Logo + Tên đơn vị hợp tác"
             android:layout_width="0dp"
             android:layout_height="100dp"
             android:layout_marginTop="8dp"
             android:overScrollMode="never"
+            android:clipToPadding="false"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvPartners" />
+            app:layout_constraintTop_toBottomOf="@id/tvPartner"
+            tools:listitem="@layout/item_partner"/>
 
         <!-- 5. Tin tức -->
-        <TextView
-            android:id="@+id/tvNews"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/newsContainer"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
-            android:text="Tin tức"
-            style="@style/TextHeading4"
             android:layout_marginStart="16dp"
-            android:textColor="@color/black_primary"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintTop_toBottomOf="@id/recyclerPartner"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/recyclerPartners" />
+            app:layout_constraintEnd_toEndOf="parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerNews"
-            android:layout_width="0dp"
-            android:layout_height="160dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginStart="16dp"
-            android:overScrollMode="never"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            <TextView
+                android:id="@+id/tvNews"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:text="Tin tức"
+                android:textColor="@color/black_primary"
+                style="@style/TextHeading4"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/btnNewsMore"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/btnNewsMore"
+                android:layout_marginEnd="8dp"/>
+
+            <ImageView
+                android:id="@+id/btnNewsMore"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/caret_right_xs"
+                android:contentDescription="Xem thêm tin tức"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/tvNews"
+                app:layout_constraintBottom_toBottomOf="@id/tvNews"/>
+
+            <ImageView
+                android:id="@+id/newsImage"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:layout_marginTop="8dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/tintuc1"
+                android:contentDescription="Hình tin tức"
+                app:layout_constraintTop_toBottomOf="@id/tvNews"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!-- 6. Chatbot -->
+        <ImageButton
+            android:id="@+id/btnChatbot"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bg_circle_chatbot"
+            android:contentDescription="Chatbot"
+            android:scaleType="centerInside"
+            android:src="@drawable/chatbotai"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tvNews" />
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
