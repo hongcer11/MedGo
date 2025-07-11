@@ -1,0 +1,238 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/neutral_0"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.group4.ui.booking.BookingStep1Fragment">
+<!--Chuyên khoa-->
+<!--    Title-->
+    <TextView
+        android:id="@+id/titleSpecialty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Chuyên khoa"
+        style="@style/TextHeading4"
+        android:textColor="@color/black_primary"
+        android:layout_marginStart="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+<!--    input chuyên khoa-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/SpecialtyLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_input_default"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/titleSpecialty">
+
+        <ImageView
+            android:id="@+id/iconSpecialty"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Biểu tượng tìm kiếm"
+            android:src="@drawable/chuyenkhoa_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            />
+
+        <EditText
+            android:id="@+id/inputSpecialty"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:hint="Chọn chuyên khoa"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/black_primary"
+            android:textColorHint="@color/black_secondary"
+            app:layout_constraintStart_toEndOf="@id/iconSpecialty"
+            app:layout_constraintEnd_toStartOf="@id/iconExpandSpecialty"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iconExpandSpecialty"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/expand_n"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+<!--Cơ sở y tế-->
+    <TextView
+        android:id="@+id/txtCSYT"
+        style="@style/TextHeading4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="Cơ sở y tế"
+        android:textColor="@color/black_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/SpecialtyLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/HospitalLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_input_default"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txtCSYT">
+
+        <ImageView
+            android:id="@+id/iconHospital"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Biểu tượng tìm kiếm"
+            android:src="@drawable/hospital_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <EditText
+            android:id="@+id/inputHospital"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:hint="Chọn cơ sở y tế"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/black_primary"
+            android:textColorHint="@color/black_secondary"
+            app:layout_constraintStart_toEndOf="@id/iconHospital"
+            app:layout_constraintEnd_toStartOf="@id/iconExpandHospital"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iconExpandHospital"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/expand_n"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/Doctor"
+        style="@style/TextHeading4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="Bác sỹ"
+        android:textColor="@color/black_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/HospitalLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/DoctorLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_input_default"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Doctor">
+
+        <ImageView
+            android:id="@+id/iconDoctor"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginStart="12dp"
+            android:contentDescription="Icon Doctor"
+            android:src="@drawable/icon_doctor_default"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <EditText
+            android:id="@+id/inputDoctor"
+            android:layout_width="0dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/transparent"
+            android:hint="Chọn cơ sở y tế"
+            android:inputType="none"
+            android:focusable="false"
+            android:clickable="false"
+            android:longClickable="false"
+            android:cursorVisible="false"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:textColor="@color/black_primary"
+            android:textColorHint="@color/black_secondary"
+            app:layout_constraintStart_toEndOf="@id/iconDoctor"
+            app:layout_constraintEnd_toStartOf="@id/iconExpandDoctor"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+
+        <ImageView
+            android:id="@+id/iconExpandDoctor"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginEnd="12dp"
+            android:src="@drawable/expand_n"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+    <TextView
+        android:id="@+id/Time"
+        style="@style/TextHeading4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="72dp"
+        android:text="Thời gian khám"
+        android:textColor="@color/black_primary"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/DoctorLayout" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
