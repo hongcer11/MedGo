@@ -11,7 +11,7 @@
 
     <item android:id="@+id/mnDatlich"
         android:title="Đặt lịch"
-        android:icon="@drawable/navdat_lich"/>
+        android:enabled="false"/>
 
     <item android:id="@+id/mnHoso"
         android:title="Hồ sơ"
