@@ -25,8 +25,8 @@ android {
             )
         }
     }
-    buildFeatures{
-        viewBinding=true;
+    buildFeatures {
+        viewBinding = true;
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
