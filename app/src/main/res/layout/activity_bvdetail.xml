@@ -4,15 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white_primary">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/primary_100"
+        android:background="@color/white_primary"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
+        android:paddingBottom="4dp"
+        android:paddingTop="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,17 +32,18 @@
 
         <TextView
             android:id="@+id/screenTitle"
-            style="@style/TextBody3_500"
+            style="@style/TextHeading2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Tìm kiếm"
+            android:text="Chi tiết"
             android:textColor="@android:color/black"
-            android:textSize="24sp"
             android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.452"
             app:layout_constraintStart_toEndOf="@id/backArrow"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -132,7 +136,7 @@
                 android:layout_width="20dp"
                 android:layout_height="17dp"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:text="4.9"
                 android:textColor="@color/primary_900"
                 style="@style/TextBody3_600"
@@ -186,7 +190,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
                 style="@style/TextBody2_500"
                 android:textColor="@color/black_secondary"
@@ -231,20 +235,105 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/lvCKhoa" />
 
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewReviews"
-                android:layout_width="match_parent"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:clipToPadding="false"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginStart="16dp"
+                android:background="@drawable/round_corner_background"
+                android:padding="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtReview"
-                tools:listitem="@layout/item_review" />
+                app:layout_constraintTop_toBottomOf="@+id/txtReview">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/imageViewAvatar"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/avatar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textViewName"
+                    style="@style/TextBody1_600"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Võ Tòng"
+                    android:textColor="@color/black_primary"
+                    app:layout_constraintBottom_toTopOf="@id/ratingBar"
+                    app:layout_constraintStart_toEndOf="@id/imageViewAvatar"
+                    app:layout_constraintTop_toTopOf="@id/imageViewAvatar" />
+
+                <TextView
+                    android:id="@+id/textViewDate"
+                    style="@style/TextBody3_400"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12/12/2023"
+                    android:textColor="@color/black_secondary"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/textViewName" />
+
+                <LinearLayout
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="56dp"
+                    android:orientation="horizontal"
+                    app:layout_constraintStart_toStartOf="@+id/imageViewAvatar"
+                    app:layout_constraintTop_toBottomOf="@+id/textViewName">
+
+                    <ImageView
+                        style="@style/RatingStar"
+                        android:src="@drawable/star" />
+
+                    <ImageView
+                        style="@style/RatingStar"
+                        android:src="@drawable/star" />
+
+                    <ImageView
+                        style="@style/RatingStar"
+                        android:src="@drawable/star" />
+
+                    <ImageView
+                        style="@style/RatingStar"
+                        android:src="@drawable/star" />
+
+                    <ImageView
+                        style="@style/RatingStar"
+                        android:src="@drawable/star" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/textViewReviewContent"
+                    style="@style/TextBody2_400"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="Bệnh viện mát, sạch, bác sĩ tận tâm"
+                    android:textColor="@color/black_primary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/imageViewAvatar" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+<!--            <androidx.recyclerview.widget.RecyclerView-->
+<!--                android:id="@+id/recyclerViewReviews"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="8dp"-->
+<!--                android:clipToPadding="false"-->
+<!--                android:paddingStart="16dp"-->
+<!--                android:paddingEnd="16dp"-->
+<!--                android:paddingBottom="16dp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@id/txtReview"-->
+<!--                tools:listitem="@layout/item_review" />-->
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </ScrollView>
