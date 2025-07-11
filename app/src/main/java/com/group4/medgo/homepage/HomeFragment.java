@@ -108,10 +108,6 @@ public class HomeFragment extends Fragment {
         binding.recyclerPartner.setAdapter(adapter);
 
 
-        binding.recyclerNews.setLayoutManager(
-                new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false)
-        );
-
         return binding.getRoot();
     }
 

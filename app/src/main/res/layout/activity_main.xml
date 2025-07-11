@@ -14,17 +14,17 @@
         android:layout_height="match_parent">
     </RelativeLayout>
 
+
     <com.google.android.material.bottomappbar.BottomAppBar
         android:id="@+id/bottomAppBar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:background="@color/white_primary"
         android:backgroundTint="@color/white_primary"
         app:fabCradleMargin="8dp"
         app:fabCradleRoundedCornerRadius="32dp"
-        app:hideOnScroll="false"
-        app:fabAlignmentMode="center">
+        app:fabAlignmentMode="center"
+        app:hideOnScroll="false">
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/navbar"
@@ -32,7 +32,6 @@
             android:layout_height="wrap_content"
             android:background="@color/white_primary"
             app:menu="@menu/menu_navbar"
-            android:layout_gravity="bottom"
             app:itemIconTint="@color/bottom_nav_selector"
             app:itemTextColor="@color/bottom_nav_selector"
             app:labelVisibilityMode="labeled"

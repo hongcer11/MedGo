@@ -115,17 +115,12 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginEnd="8dp"
                 android:background="@android:color/transparent"
-<<<<<<< HEAD
-                android:hint="bệnh viện..."
-                android:inputType="text"
-=======
                 android:hint="Bạn cần tìm gì...?"
                 android:inputType="none"
                 android:focusable="false"
                 android:clickable="false"
                 android:longClickable="false"
                 android:cursorVisible="false"
->>>>>>> cb7a6dcdbafa93fd9584f511839564d22b8e4ac7
                 android:maxLines="1"
                 android:singleLine="true"
                 style="@style/TextBody2_500"
@@ -147,8 +142,6 @@
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent" />
         </androidx.constraintlayout.widget.ConstraintLayout>
-
-<<<<<<< HEAD
 
         <!-- 3. Khung các chức năng -->
         <androidx.cardview.widget.CardView
@@ -378,10 +371,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tvNews"
             tools:listitem="@layout/item_news"/>
-=======
-        <!-- Các phần còn lại như cardFunctions, tvPartners, recyclerPartners, tvNews, recyclerNews giữ nguyên như bạn đã viết -->
-        <!-- Mình không paste lại để tránh quá dài nhưng bạn chỉ cần giữ nguyên các phần dưới như cũ -->
->>>>>>> cb7a6dcdbafa93fd9584f511839564d22b8e4ac7
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
