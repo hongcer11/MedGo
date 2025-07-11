@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +10,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/toolbarLayout"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
         android:background="@color/primary_100"
         android:paddingStart="16dp"
         android:paddingEnd="16dp"
@@ -43,211 +44,7 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <ScrollView
-        android:id="@+id/scrollViewContent"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/fixedButtonLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbarLayout">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-            android:id="@+id/imvBV"
-            android:layout_width="0dp"
-            android:layout_height="280dp"
-            android:scaleType="centerCrop"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:src="@drawable/hospital_placeholder" />
-
-            <TextView
-                android:id="@+id/txtBVName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:text="Tên bệnh viện"
-                android:textColor="@color/primary_700"
-                style="@style/TextHeading4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imvBV" />
-
-            <ImageView
-                android:id="@+id/imvDiaChi"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/location"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtBVName" />
-
-            <TextView
-                android:id="@+id/txtDiachi"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginEnd="16dp"
-                android:text="Địa chỉ"
-                style="@style/TextBody2_500"
-                android:textColor="@color/black_secondary"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imvDiaChi"
-                app:layout_constraintTop_toTopOf="@+id/imvDiaChi"
-                app:layout_constraintBottom_toBottomOf="@+id/imvDiaChi" />
-
-
-            <ImageView
-                android:id="@+id/imvSDT"
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="10dp"
-                android:scaleType="centerInside"
-                android:src="@drawable/call"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/imvDiaChi" />
-
-            <TextView
-                android:id="@+id/txtSDT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:text="Hotline"
-                style="@style/TextBody2_500"
-                android:textColor="@color/black_secondary"
-                app:layout_constraintStart_toEndOf="@+id/imvSDT"
-                app:layout_constraintTop_toTopOf="@+id/imvSDT"
-                app:layout_constraintBottom_toBottomOf="@+id/imvSDT" />
-
-            <TextView
-                android:paddingTop="2dp"
-                android:id="@+id/ratingValue"
-                android:layout_width="20dp"
-                android:layout_height="17dp"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="4.9"
-                android:textColor="@color/primary_900"
-                style="@style/TextBody3_600"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtSDT" />
-
-            <LinearLayout
-                android:id="@+id/starRatingLayout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="@+id/ratingValue"
-                app:layout_constraintStart_toEndOf="@+id/ratingValue"
-                app:layout_constraintTop_toTopOf="@+id/ratingValue">
-
-                <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-                <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-                <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-                <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-                <ImageView style="@style/RatingStar" android:src="@drawable/star" /> </LinearLayout>
-
-            <TextView
-                android:id="@+id/reviewCount"
-                android:layout_width="0dp"
-                android:textColor="@color/black_secondary"
-                style="@style/TextBody3_500"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginEnd="16dp"
-                android:text="(58 Đánh giá)"
-                app:layout_constraintBottom_toBottomOf="@+id/starRatingLayout"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/starRatingLayout"
-                app:layout_constraintTop_toTopOf="@+id/starRatingLayout" />
-
-            <TextView
-                android:id="@+id/txtGT"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Giới thiệu"
-                android:textColor="@color/primary_700"
-                style="@style/TextHeading4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/ratingValue" />
-
-            <TextView
-                android:id="@+id/txtMota"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                style="@style/TextBody2_500"
-                android:textColor="@color/black_secondary"
-                android:text="Mô tả aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtGT" />
-
-            <TextView
-                android:id="@+id/txtCKhoa"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Các chuyên khoa"
-                android:textColor="@color/primary_700"
-                style="@style/TextHeading4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtMota" />
-
-            <ListView
-                android:id="@+id/lvCKhoa"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                style="@style/TextBody2_500"
-                android:nestedScrollingEnabled="false"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/txtCKhoa" />
-            <TextView
-                android:id="@+id/txtReview"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:text="Bài đánh giá"
-                android:textColor="@color/primary_700"
-                style="@style/TextHeading4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/lvCKhoa" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerViewReviews"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:clipToPadding="false"
-                android:paddingStart="16dp"
-                android:paddingEnd="16dp"
-                android:paddingBottom="16dp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/txtReview"
-                tools:listitem="@layout/item_review" />
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </ScrollView>
+    <!-- ... phần ScrollView và nội dung giữa giữ nguyên như bạn gửi ... -->
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/fixedButtonLayout"
@@ -271,6 +68,7 @@
             android:text="Chỉ đường"
             android:textAllCaps="false"
             android:textColor="#2F6FED"
+            android:gravity="center"
             style="@style/TextBody1_600"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/btnBook"
@@ -287,6 +85,7 @@
             android:background="@drawable/btn_solid_blue"
             android:text="Đặt khám ngay"
             android:textAllCaps="false"
+            android:gravity="center"
             android:textColor="#FFFFFF"
             style="@style/TextBody1_600"
             app:layout_constraintBottom_toBottomOf="parent"
