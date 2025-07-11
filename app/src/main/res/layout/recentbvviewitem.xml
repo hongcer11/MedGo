@@ -1,171 +1,191 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
+    android:layout_width="300dp"
     android:layout_height="match_parent"
-    android:background="#F8F9FA">
-    <androidx.cardview.widget.CardView
-    android:id="@+id/hospitalCard"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_marginStart="16dp"
-    android:layout_marginTop="16dp"
-    android:layout_marginEnd="16dp"
-    app:cardCornerRadius="12dp"
-    app:cardElevation="4dp"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:background="@color/white_primary">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/hospitalCard"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white_primary">
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/hospitalImage"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/hospital_placeholder" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:contentDescription="Hình ảnh bệnh viện" />
-
-        <ImageView
-            android:id="@+id/favoriteIcon"
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-        android:padding="6dp"
-        android:src="@drawable/heart_icon_selector"
-        app:layout_constraintEnd_toEndOf="@+id/hospitalImage"
-        app:layout_constraintTop_toTopOf="@+id/hospitalImage"
-        android:contentDescription="Thêm vào yêu thích" />
-
-        <TextView
-            android:id="@+id/hospitalName"
-            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:text="Bệnh viện Da liễu TP. HCM"
-            android:textColor="@color/black_secondary"
-            style="@style/TextHeading4"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hospitalImage" />
+            android:background="@color/white_primary">
 
-        <ImageView
-            android:id="@+id/locationIcon"
-            android:layout_width="18dp"
-            android:layout_height="18dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="8dp"
-            android:src="@drawable/location" app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hospitalName"
-            android:contentDescription="Biểu tượng địa chỉ" />
+            <ImageView
+                android:id="@+id/hospitalImage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:contentDescription="Hình ảnh bệnh viện"
+                android:scaleType="centerCrop"
+                android:src="@drawable/hospital_placeholder"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:textColor="@color/black_secondary"
-            style="@style/TextBody3_500"
-            android:id="@+id/hospitalAddress"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:layout_marginEnd="16dp"
-            android:text="Số 02, Trường Định, Quận 3"
-            app:layout_constraintBottom_toBottomOf="@+id/locationIcon"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/locationIcon"
-            app:layout_constraintTop_toTopOf="@+id/locationIcon" />
+            <ImageView
+                android:id="@+id/favoriteIcon"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Thêm vào yêu thích"
+                android:padding="6dp"
+                android:src="@drawable/heart_icon_selector"
+                app:layout_constraintEnd_toEndOf="@+id/hospitalImage"
+                app:layout_constraintTop_toTopOf="@+id/hospitalImage" />
 
-        <TextView
-            android:paddingTop="2dp"
-            android:id="@+id/ratingValue"
-            android:layout_width="20dp"
-            android:layout_height="17dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="4.9"
-            android:textColor="@color/primary_900"
-            style="@style/TextBody3_600"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/hospitalAddress" />
+            <TextView
+                android:id="@+id/hospitalName"
+                style="@style/TextHeading4"
+                android:layout_width="0dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:text="Bệnh viện Da liễu TP. HCM"
+                android:textColor="@color/black_secondary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hospitalImage" />
 
-        <LinearLayout
-            android:id="@+id/starRatingLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="4dp"
-            android:orientation="horizontal"
-            app:layout_constraintBottom_toBottomOf="@+id/ratingValue"
-            app:layout_constraintStart_toEndOf="@+id/ratingValue"
-            app:layout_constraintTop_toTopOf="@+id/ratingValue">
+            <ImageView
+                android:id="@+id/locationIcon"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:contentDescription="Biểu tượng địa chỉ"
+                android:src="@drawable/location"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hospitalName" />
 
-            <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-            <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-            <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-            <ImageView style="@style/RatingStar" android:src="@drawable/star" />
-            <ImageView style="@style/RatingStar" android:src="@drawable/star" /> </LinearLayout>
+            <TextView
+                android:id="@+id/hospitalAddress"
+                style="@style/TextBody3_500"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="16dp"
+                android:text="Số 02, Trường Định, Quận 3"
+                android:textColor="@color/black_secondary"
+                app:layout_constraintBottom_toBottomOf="@+id/locationIcon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/locationIcon"
+                app:layout_constraintTop_toTopOf="@+id/locationIcon" />
 
-        <TextView
-            android:id="@+id/reviewCount"
-            android:layout_width="0dp"
-            android:textColor="@color/black_secondary"
-            style="@style/TextBody3_500"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="16dp"
-            android:text="(58 Đánh giá)"
-            app:layout_constraintBottom_toBottomOf="@+id/starRatingLayout"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/starRatingLayout"
-            app:layout_constraintTop_toTopOf="@+id/starRatingLayout" />
+            <TextView
+                android:id="@+id/ratingValue"
+                style="@style/TextBody3_600"
+                android:layout_width="20dp"
+                android:layout_height="17dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:paddingTop="2dp"
+                android:text="4.9"
+                android:textColor="@color/primary_900"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/hospitalAddress" />
+
+            <LinearLayout
+                android:id="@+id/starRatingLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="@+id/ratingValue"
+                app:layout_constraintStart_toEndOf="@+id/ratingValue"
+                app:layout_constraintTop_toTopOf="@+id/ratingValue">
+
+                <ImageView
+                    style="@style/RatingStar"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    style="@style/RatingStar"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    style="@style/RatingStar"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    style="@style/RatingStar"
+                    android:src="@drawable/star" />
+
+                <ImageView
+                    style="@style/RatingStar"
+                    android:src="@drawable/star" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/reviewCount"
+                style="@style/TextBody3_500"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="16dp"
+                android:text="(58 Đánh giá)"
+                android:textColor="@color/black_secondary"
+                app:layout_constraintBottom_toBottomOf="@+id/starRatingLayout"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/starRatingLayout"
+                app:layout_constraintTop_toTopOf="@+id/starRatingLayout" />
 
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnBookAppointment"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/btn_solid_blue"
-            android:paddingVertical="12dp"
-            android:textAllCaps="false"
-            style="@style/TextBody1_600"
-            android:gravity="center"
-            android:text="Đặt khám"
-            android:textColor="@color/white_primary"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ratingValue" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnBookAppointment"
+                style="@style/TextBody1_600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="24dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/btn_solid_blue"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="Đặt khám"
+                android:textAllCaps="false"
+                android:textColor="@color/white_primary"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/ratingValue" />
 
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/btnViewDetails"
-            android:layout_width="0dp"
-            android:textAllCaps="false"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:layout_marginEnd="16dp"
-            android:layout_marginBottom="16dp"
-            android:background="@drawable/btn_border_blue"
-            android:paddingVertical="12dp"
-            android:textColor="@color/primary_700"
-            android:text="Xem chi tiết"
-            android:gravity="center"
-            style="@style/TextBody1_600"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btnBookAppointment" />
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btnViewDetails"
+                style="@style/TextBody1_600"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/btn_border_blue"
+                android:gravity="center"
+                android:paddingVertical="12dp"
+                android:text="Xem chi tiết"
+                android:textAllCaps="false"
+                android:textColor="@color/primary_700"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btnBookAppointment" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
-</androidx.cardview.widget.CardView>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
