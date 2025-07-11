@@ -2,6 +2,7 @@ package com.group4.medgo;
 
 import android.os.Bundle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import com.group4.data.db.SQLiteHelper;
 import com.group4.medgo.homepage.HomeFragment;
@@ -14,6 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
+
         // Khởi tạo database nếu chưa có
         SQLiteHelper dbHelper = new SQLiteHelper(this);
         try {
@@ -23,8 +27,8 @@ public class MainActivity extends AppCompatActivity {
         }
 
         // Hiển thị Fragment
-        getSupportFragmentManager().beginTransaction()
-                .replace(android.R.id.content, new HomeFragment())
-                .commit();
+//        getSupportFragmentManager().beginTransaction()
+//                .replace(android.R.id.content, new HomeFragment())
+//                .commit();
     }
 }

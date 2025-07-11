@@ -118,6 +118,7 @@
                 android:inputType="text"
                 android:maxLines="1"
                 android:singleLine="true"
+                style="@style/TextBody2_500"
                 android:textColor="@color/black_primary"
                 android:textColorHint="@color/black_secondary"
                 app:layout_constraintStart_toEndOf="@id/searchIcon"
@@ -146,7 +147,10 @@
             android:layout_marginTop="42dp"
             app:cardCornerRadius="32dp"
             app:cardElevation="2dp"
-            android:background="@color/white_primary"
+            app:cardBackgroundColor="@color/white_primary"
+            android:background="@drawable/cardfunctions_bg"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/searchBarContainer">
@@ -156,8 +160,7 @@
                 android:layout_height="wrap_content"
                 android:columnCount="3"
                 android:padding="12dp"
-                android:rowCount="2"
-                style="@style/TextBody3_500">
+                android:rowCount="2">
 
                 <LinearLayout
                     android:layout_width="0dp"
@@ -177,6 +180,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Đặt lịch"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -199,6 +203,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Thanh toán viện phí"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -221,6 +226,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Thanh toán tiền thuốc"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -243,6 +249,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="GoLive"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -266,6 +273,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Nhắc nhở uống thuốc"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -288,6 +296,7 @@
                         android:layout_height="33dp"
                         android:gravity="center"
                         android:text="Lịch tái khám"
+                        style="@style/TextBody3_500"
                         android:textColor="@color/neutral_1000"
                         android:layout_marginTop="5dp"/>
                 </LinearLayout>
@@ -301,7 +310,6 @@
             android:id="@+id/tvPartner"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="36dp"
             android:layout_marginTop="24dp"
             android:gravity="center"
             android:text="ĐƠN VỊ TIN TƯỞNG HỢP TÁC VÀ ĐỒNG HÀNH"
