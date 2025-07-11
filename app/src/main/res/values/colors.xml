@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Color Palette -->
+    <color name="primary_100">#F0F5FF</color>
+    <color name="primary_300">#CAD6EF</color>
+    <color name="primary_700">#2F6FED</color>
+    <color name="primary_800">#1D5BD6</color>
+    <color name="primary_900">#1E4EAE</color>
+
+    <!-- Secondary Color Palette -->
+    <color name="secondary_100">#F8F5FF</color>
+    <color name="secondary_700">#8B54F7</color>
+    <color name="secondary_800">#6D35DE</color>
+    <color name="secondary_900">#5221B5</color>
+    <!-- Success Colors -->
+    <color name="success_100">#EDFDF8</color>
+    <color name="success_700">#12B27C</color>
+    <color name="success_800">#088058</color>
+    <color name="success_900">#026645</color>
+
+    <!-- Warning Colors -->
+    <color name="warning_100">#FFF9EB</color>
+    <color name="warning_700">#FEBE32</color>
+    <color name="warning_800">#DFA527</color>
+    <color name="warning_900">#A3730C</color>
+
+    <!-- Danger Colors -->
+    <color name="danger_100">#FEF1F2</color>
+    <color name="danger_700">#E02D3C</color>
+    <color name="danger_800">#BA2532</color>
+    <color name="danger_900">#981B25</color>
+
+    <!-- Black / White System -->
+    <color name="black_primary">#1D2433</color>
+    <color name="black_secondary">#4A505C</color>
+    <color name="black_disabled">#6C707A</color>
+
+    <color name="white_primary">#FFFFFF</color>
+    <color name="white_secondary">#C2C2C4</color>
+    <color name="white_disabled">#D9D9D9</color>
+    <!-- Neutral Colors -->
+    <color name="neutral_0">#FFFFFF</color>
+    <color name="neutral_100">#F8F9FC</color>
+    <color name="neutral_200">#F1F3F9</color>
+    <color name="neutral_300">#E1E6EF</color>
+    <color name="neutral_700">#3F444D</color>
+    <color name="neutral_800">#23272F</color>
+    <color name="neutral_900">#1B1F27</color>
+    <color name="neutral_1000">#0A0D14</color>
+</resources>
