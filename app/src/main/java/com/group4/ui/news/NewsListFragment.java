@@ -84,6 +84,7 @@ public class NewsListFragment extends Fragment {
 
         EditText searchEditText = view.findViewById(R.id.searchEditText);
 
+        // xử lý tìm kiếm
         searchEditText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
@@ -103,7 +104,21 @@ public class NewsListFragment extends Fragment {
             public void afterTextChanged(Editable s) {}
         });
 
+        //Thêm focus listener để ẩn/hiện BottomAppBar & fabDatlich
+        searchEditText.setOnFocusChangeListener((v, hasFocus) -> {
+            View bottomAppBar = requireActivity().findViewById(R.id.bottomAppBar);
+            View fabDatlich = requireActivity().findViewById(R.id.fabDatlich);
 
+            if (hasFocus) {
+                if (bottomAppBar != null) bottomAppBar.setVisibility(View.GONE);
+                if (fabDatlich != null) fabDatlich.setVisibility(View.GONE);
+            } else {
+                if (bottomAppBar != null) bottomAppBar.setVisibility(View.VISIBLE);
+                if (fabDatlich != null) fabDatlich.setVisibility(View.VISIBLE);
+            }
+        });
+
+        //tab
         new TabLayoutMediator(tabLayout, viewPager,
                 (tab, position) -> {
                     switch (position) {
@@ -128,7 +143,6 @@ public class NewsListFragment extends Fragment {
                     .addToBackStack(null)
                     .commit();
         });
-
 
         return view;
     }
