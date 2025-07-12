@@ -37,13 +37,16 @@
             android:name="com.group4.ui.appointment.AppointmentActivity"
             android:exported="false" />
         <activity
+            android:name="com.group4.ui.user.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
             android:name="com.group4.ui.user.ForgetPasswordActivity"
             android:exported="false" />
         <activity
             android:name="com.group4.ui.user.LoginOTP_Activity"
             android:exported="false" />
         <activity
-            android:name="com.group4.ui.user.ChangePasswordActivity"
+            android:name="com.group4.ui.user.LoginPasswordActivity"
             android:exported="false" />
         <activity
             android:name="com.group4.ui.user.Register_Activity"
@@ -52,14 +55,10 @@
             android:name="com.group4.ui.user.InfoUserActivity"
             android:exported="false" />
         <activity
-            android:name="com.group4.ui.user.LoginPasswordActivity"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

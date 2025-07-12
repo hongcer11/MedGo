@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.group4.data.db.SQLiteHelper;
 
+import com.group4.data.model.User;
 import com.group4.medgo.databinding.ActivityMainBinding;
 import com.group4.medgo.homepage.HomeFragment;
 import com.group4.ui.accountsetting.AccountSettingFragment;
@@ -23,6 +24,7 @@ import com.group4.ui.profile.ProfileFragment;
 public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,10 +42,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Load mặc định HomeFragment
+        // Mặc định mở HomeFragment
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
         }
+
         binding.navbar.setOnItemSelectedListener(item -> {
             Fragment selected = null;
             int itemId = item.getItemId();

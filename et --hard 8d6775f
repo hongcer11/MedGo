@@ -1,0 +1,30 @@
+[33m7b1013d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlogin-logout[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m7b1013d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlogin-logout[m[33m)[m HEAD@{1}: reset: moving to HEAD
+[33m7b1013d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlogin-logout[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m7b1013d[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mlogin-logout[m[33m)[m HEAD@{3}: commit: Resolve merge conflict giữa login-logout và main
+[33m357cab8[m HEAD@{4}: commit: Resolve merge conflict giữa login-logout và main
+[33m7c36969[m HEAD@{5}: commit: Resolve merge conflict giữa login-logout và main
+[33ma589a8c[m HEAD@{6}: reset: moving to origin/main
+[33m5bc5316[m HEAD@{7}: checkout: moving from login-logout to login-logout
+[33m5bc5316[m HEAD@{8}: commit: Resolve merge conflict giữa login-logout và main
+[33m506553e[m HEAD@{9}: commit: Cập nhật AndroidManifest sau khi merge
+[33m8d6775f[m HEAD@{10}: merge origin/main: Fast-forward
+[33m4ac2468[m[33m ([m[1;31morigin/login-logout[m[33m)[m HEAD@{11}: checkout: moving from login-logout to login-logout
+[33m4ac2468[m[33m ([m[1;31morigin/login-logout[m[33m)[m HEAD@{12}: reset: moving to HEAD
+[33m4ac2468[m[33m ([m[1;31morigin/login-logout[m[33m)[m HEAD@{13}: commit: Lưu code mới nhất trước khi merge main
+[33mbb630b7[m HEAD@{14}: reset: moving to origin/main
+[33m9c9c175[m HEAD@{15}: reset: moving to HEAD
+[33m9c9c175[m HEAD@{16}: commit: Giải quyết xung đột sau git stash pop
+[33mdda35ac[m HEAD@{17}: checkout: moving from main to login-logout
+[33m6915502[m[33m ([m[1;32mmain[m[33m)[m HEAD@{18}: pull origin main: Fast-forward
+[33m27ef793[m HEAD@{19}: checkout: moving from main to main
+[33m27ef793[m HEAD@{20}: reset: moving to HEAD
+[33m27ef793[m HEAD@{21}: checkout: moving from login-logout to main
+[33mdda35ac[m HEAD@{22}: commit: Thêm code login/logout và giải quyết xung đột
+[33m27ef793[m HEAD@{23}: checkout: moving from main to login-logout
+[33m27ef793[m HEAD@{24}: pull origin main: Fast-forward
+[33m2b58244[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{25}: checkout: moving from master to main
+[33m2b58244[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{26}: checkout: moving from main to master
+[33m2b58244[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{27}: checkout: moving from master to main
+[33m2b58244[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{28}: reset: moving to HEAD
+[33m2b58244[m[33m ([m[1;32mmaster[m[33m)[m HEAD@{29}: 

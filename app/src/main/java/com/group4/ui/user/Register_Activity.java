@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import android.os.Bundle;
+
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -24,7 +26,6 @@ public class Register_Activity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         addEvents();
-
     }
 
     private void addEvents() {
