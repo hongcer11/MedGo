@@ -13,6 +13,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.group4.data.db.SQLiteHelper;
 
+import com.group4.data.model.User;
 import com.group4.medgo.databinding.ActivityMainBinding;
 import com.group4.medgo.homepage.ChatbotFragment;
 import com.group4.medgo.homepage.HomeFragment;
@@ -42,10 +43,11 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        // Load mặc định HomeFragment
+        // Mặc định mở HomeFragment
         if (savedInstanceState == null) {
             loadFragment(new HomeFragment());
         }
+
         binding.navbar.setOnItemSelectedListener(item -> {
             Fragment selected = null;
             int itemId = item.getItemId();
@@ -57,7 +59,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.mnLichkham) {
                 selected = new AppointmentFragment();
             } else if (itemId == R.id.mnDatlich) {
-                //selected = new DoctorFragment(); // hoặc fragment khác
                 Intent intent = new Intent(this, Booking1Activity.class);
                 startActivity(intent);
                 return false; // Không cần load fragment
@@ -83,7 +84,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-
+        binding.fabDatlich.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, Booking1Activity.class))
+        );
     }
 
     private boolean loadFragment(@NonNull Fragment fragment) {
@@ -94,6 +97,4 @@ public class MainActivity extends AppCompatActivity {
     return true;
 
     }
-
-
 }

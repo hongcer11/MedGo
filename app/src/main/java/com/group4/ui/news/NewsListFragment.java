@@ -137,11 +137,7 @@ public class NewsListFragment extends Fragment {
 
         ImageView backArrow = view.findViewById(R.id.backArrow);
         backArrow.setOnClickListener(v -> {
-            requireActivity().getSupportFragmentManager()
-                    .beginTransaction()
-                    .replace(R.id.fragment_container, new HomeFragment())
-                    .addToBackStack(null)
-                    .commit();
+            requireActivity().getOnBackPressedDispatcher().onBackPressed();
         });
 
         return view;

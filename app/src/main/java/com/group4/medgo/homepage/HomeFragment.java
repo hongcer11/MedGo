@@ -22,6 +22,7 @@ import android.widget.Toast;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.group4.data.model.Partner;
+import com.group4.data.model.User;
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.FragmentHomeBinding;
 import com.group4.ui.common.PartnerAdapter;
@@ -30,6 +31,7 @@ import java.util.ArrayList;
 
 import com.group4.ui.SearchActivity.SearchActivity;
 import com.group4.ui.news.NewsListFragment;
+import com.group4.ui.user.LoginPasswordActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -37,7 +39,6 @@ import com.group4.ui.news.NewsListFragment;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -111,6 +112,11 @@ public class HomeFragment extends Fragment {
         adapter = new PartnerAdapter(getContext(), partners);
         binding.recyclerPartner.setAdapter(adapter);
 
+        // Xử lý khi bấm vào chữ "Đăng nhập"
+        binding.tvlogin.setOnClickListener(v -> {
+            Intent intent = new Intent(requireActivity(), LoginPasswordActivity.class);
+            startActivity(intent);
+        });
 
         return binding.getRoot();
     }
@@ -119,7 +125,7 @@ public class HomeFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // 1. Tìm searchBarContainer theo ID
+        // Tìm searchBarContainer theo ID
         // Sử dụng view.findViewById để tìm view trong layout của fragment
         searchBarContainer = view.findViewById(R.id.searchBarContainer);
         View searchEditText = view.findViewById(R.id.searchEditText);

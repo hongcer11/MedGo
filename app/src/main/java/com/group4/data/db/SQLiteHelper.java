@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.database.SQLException;
+
+import com.group4.data.model.User;
+
 import java.io.*;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
@@ -77,5 +80,30 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Có thể xử lý sau nếu nâng cấp DB
+    }
+
+    public User getUserByPhoneAndPassword(String phone, String password) {
+        User user = null;
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM User WHERE phone = ? AND password = ?",
+                new String[]{phone, password}
+        );
+
+        if (cursor != null && cursor.moveToFirst()) {
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+            String fullName = cursor.getString(cursor.getColumnIndexOrThrow("fullName"));
+            String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+            String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
+            String dob = cursor.getString(cursor.getColumnIndexOrThrow("dob"));
+            String address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+
+            user = new User(id, fullName, phone, email, password, gender, dob, address);
+
+            cursor.close();
+        }
+
+        return user;
     }
 }

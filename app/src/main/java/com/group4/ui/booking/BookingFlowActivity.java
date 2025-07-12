@@ -27,7 +27,6 @@ public class BookingFlowActivity extends AppCompatActivity {
     }
     public void goToStep(int stepNumber) {
         Fragment fragment;
-
         switch (stepNumber) {
             case 1:
                 fragment = new BookingStep1Fragment();
@@ -44,9 +43,7 @@ public class BookingFlowActivity extends AppCompatActivity {
             default:
                 return;
         }
-
         updateStepIndicator(stepNumber);
-
         getSupportFragmentManager()
                 .beginTransaction()
                 .replace(binding.fragmentContainer.getId(), fragment)

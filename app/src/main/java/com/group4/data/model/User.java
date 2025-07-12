@@ -13,7 +13,7 @@ public class User implements Serializable {
     private String email;
     private String password;
     private String dob;          // Định dạng: "dd/MM/yyyy"
-    private String phoneNumber;
+    private String phone_numb;
     private String gender;       // "Nam" | "Nữ" | ...
     private String status;       // "Active", "Inactive", ...
 
@@ -24,13 +24,13 @@ public class User implements Serializable {
     }
 
     public User(int userId, String fullName, String email, String password,
-                String dob, String phoneNumber, String gender, String status) {
+                String dob, String phone_numb, String gender, String status) {
         this.userId      = userId;
         this.fullName    = fullName;
         this.email       = email;
         this.password    = password;
         this.dob         = dob;
-        this.phoneNumber = phoneNumber;
+        this.phone_numb = phone_numb;
         this.gender      = gender;
         this.status      = status;
     }
@@ -72,11 +72,12 @@ public class User implements Serializable {
         this.dob = dob;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public String getPhone_numb() {
+        return phone_numb;
     }
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+
+    public void setPhone_numb(String phone_numb) {
+        this.phone_numb = phone_numb;
     }
 
     public String getGender() {
@@ -102,7 +103,7 @@ public class User implements Serializable {
                 ", fullName='" + fullName + '\'' +
                 ", email='" + email + '\'' +
                 ", dob='" + dob + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
+                ", phone_numb='" + phone_numb + '\'' +
                 ", gender='" + gender + '\'' +
                 ", status='" + status + '\'' +
                 '}';

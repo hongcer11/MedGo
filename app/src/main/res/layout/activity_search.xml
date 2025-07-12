@@ -29,18 +29,20 @@ android:background="@color/white_primary">
         android:contentDescription="Quay lại" />
 
     <TextView
-        style="@style/TextBody3_500"
         android:id="@+id/screenTitle"
+        style="@style/TextBody3_500"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Tìm kiếm"
+        android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:textColor="@android:color/black"
-        app:layout_constraintStart_toEndOf="@id/backArrow"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.449"
+        app:layout_constraintStart_toEndOf="@id/backArrow"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent" />
+        app:layout_constraintVertical_bias="0.518" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -82,6 +84,7 @@ android:background="@color/white_primary">
         android:layout_width="0dp"
         android:layout_height="48dp"
         android:layout_marginStart="8dp"
+        android:imeOptions="actionSearch"
         android:layout_marginEnd="8dp"
         style="@style/TextBody2_500"
         android:background="@android:color/transparent"
@@ -95,14 +98,14 @@ android:background="@color/white_primary">
         android:textColor="@color/black_primary"
         android:textColorHint="@color/black_secondary"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/clearTextIcon"
+        app:layout_constraintEnd_toStartOf="@+id/MicroIcon"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toEndOf="@+id/searchIcon"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
-        android:id="@+id/clearTextIcon"
+        android:id="@+id/MicroIcon"
         android:layout_width="24dp"
         android:layout_height="24dp"
         android:layout_marginEnd="12dp"
@@ -185,14 +188,14 @@ android:background="@color/white_primary">
             android:textColor="@android:color/black"
             android:textStyle="bold"
             android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp" />
+            android:layout_marginTop="8dp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recentItemsRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:paddingStart="16dp"
+            android:paddingStart="8dp"
             android:clipToPadding="false" />
 
 
@@ -230,7 +233,7 @@ android:background="@color/white_primary">
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:paddingStart="16dp"
+            android:paddingStart="0dp"
             android:clipToPadding="false" />
     </LinearLayout>
 
