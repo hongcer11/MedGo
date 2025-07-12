@@ -17,6 +17,7 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.group4.data.model.User;
+import com.group4.medgo.MainActivity;
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.FragmentHomeBinding;
 import com.group4.models.Partner;
@@ -150,6 +151,32 @@ public class HomeFragment extends Fragment {
             });
         }
 
+//        binding.tvlogin.setOnClickListener(v -> {
+//            Intent intent = new Intent(requireActivity(), LoginPasswordActivity.class);
+//            startActivity(intent);
+//        });
+        if (MainActivity.currentUser != null) {
+            String fullName = MainActivity.currentUser.getFullName().trim();
+            String[] parts = fullName.split(" ");
+
+            String displayName = parts.length >= 2
+                    ? parts[parts.length - 2] + " " + parts[parts.length - 1]
+                    : parts[parts.length - 1]; // fallback nếu chỉ có 1 từ
+
+            binding.tvlogin.setText(displayName);
+            binding.tvlogin.setOnClickListener(null); // không click được nữa
+        } else {
+            binding.tvlogin.setText("Đăng ký / Đăng nhập");
+            binding.tvlogin.setOnClickListener(v -> {
+                Intent intent = new Intent(requireActivity(), LoginPasswordActivity.class);
+                startActivity(intent);
+            });
+        }
+    }
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        binding = null;
     }
 
 }

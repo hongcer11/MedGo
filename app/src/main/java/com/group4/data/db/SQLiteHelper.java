@@ -82,28 +82,55 @@ public class SQLiteHelper extends SQLiteOpenHelper {
         // Có thể xử lý sau nếu nâng cấp DB
     }
 
-    public User getUserByPhoneAndPassword(String phone, String password) {
-        User user = null;
-        SQLiteDatabase db = this.getReadableDatabase();
+//    public User getUserByPhoneAndPassword(String phone, String password) {
+//        User user = null;
+//        SQLiteDatabase db = this.getReadableDatabase();
+//
+//        Cursor cursor = db.rawQuery(
+//                "SELECT * FROM user WHERE phone_numb = ? AND password = ?",
+//                new String[]{phone, password}
+//        );
+//
+//        if (cursor != null && cursor.moveToFirst()) {
+//            int id = cursor.getInt(cursor.getColumnIndexOrThrow("user_id"));
+//            String fullName = cursor.getString(cursor.getColumnIndexOrThrow("full_name"));
+//            String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+//            String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
+//            String dob = cursor.getString(cursor.getColumnIndexOrThrow("dob"));
+//            String status = cursor.getString(cursor.getColumnIndexOrThrow("Status"));
+//            String phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow("phone_number"));
+////            String address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+//
+//            user = new User(id, fullName, phoneNumber, email, password, gender, dob, status);
+//
+//            cursor.close();
+//        }
+//
+//        return user;
+//    }
+public User getUserByPhoneAndPassword(String phone, String password) {
+    User user = null;
+    SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.rawQuery(
-                "SELECT * FROM User WHERE phone = ? AND password = ?",
-                new String[]{phone, password}
-        );
+    Cursor cursor = db.rawQuery(
+            "SELECT * FROM user WHERE phone_number = ? AND password = ?",
+            new String[]{phone, password}
+    );
 
-        if (cursor != null && cursor.moveToFirst()) {
-            int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
-            String fullName = cursor.getString(cursor.getColumnIndexOrThrow("fullName"));
-            String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
-            String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
-            String dob = cursor.getString(cursor.getColumnIndexOrThrow("dob"));
-            String address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+    if (cursor != null && cursor.moveToFirst()) {
+        int id = cursor.getInt(cursor.getColumnIndexOrThrow("user_id"));
+        String fullName = cursor.getString(cursor.getColumnIndexOrThrow("full_name"));
+        String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+        String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
+        String dob = cursor.getString(cursor.getColumnIndexOrThrow("dob"));
+        String status = cursor.getString(cursor.getColumnIndexOrThrow("status"));
+        String phoneNumber = cursor.getString(cursor.getColumnIndexOrThrow("phone_number"));
 
-            user = new User(id, fullName, phone, email, password, gender, dob, address);
+        user = new User(id, fullName, email, password, dob, phoneNumber, gender, status);
 
-            cursor.close();
-        }
-
-        return user;
+        cursor.close();
     }
+
+    return user;
+}
 }

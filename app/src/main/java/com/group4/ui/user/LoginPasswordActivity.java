@@ -28,6 +28,14 @@ public class LoginPasswordActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityLoginPasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        dbHelper = new SQLiteHelper(this);
+        try {
+            dbHelper.createDatabaseIfNeeded();
+            dbHelper.openDatabase();
+        } catch (IOException e) {
+            e.printStackTrace();
+            Toast.makeText(this, "Lỗi khi mở CSDL", Toast.LENGTH_SHORT).show();
+        }
 
         addEvents();
     }
@@ -43,6 +51,28 @@ public class LoginPasswordActivity extends AppCompatActivity {
                 startActivity(new Intent(this, LoginOTP_Activity.class)));
 
 
+//        binding.btnLogin.setOnClickListener(view -> {
+//            String phone = binding.edtPhone.getText().toString().trim();
+//            String password = binding.edtPassword.getText().toString().trim();
+//
+//            if (phone.isEmpty() || password.isEmpty()) {
+//                Toast.makeText(this, "Vui lòng nhập số điện thoại và mật khẩu", Toast.LENGTH_SHORT).show();
+//                return;
+//            }
+//
+//            // Kiểm tra tài khoản trong cơ sở dữ liệu
+//            User user = dbHelper.getUserByPhoneAndPassword(phone, password);
+//
+//            if (user != null) {
+//                // Đăng nhập thành công, chuyển sang MainActivity
+//                Intent intent = new Intent(this, MainActivity.class);
+//                intent.putExtra("loggedInUser", user); // Truyền user sang MainActivity
+//                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Xoá stack đăng nhập
+//                startActivity(intent);
+//            } else {
+//                Toast.makeText(this, "Sai số điện thoại hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+//            }
+//        });
         binding.btnLogin.setOnClickListener(view -> {
             String phone = binding.edtPhone.getText().toString().trim();
             String password = binding.edtPassword.getText().toString().trim();
@@ -52,18 +82,22 @@ public class LoginPasswordActivity extends AppCompatActivity {
                 return;
             }
 
-            // Kiểm tra tài khoản trong cơ sở dữ liệu
-            User user = dbHelper.getUserByPhoneAndPassword(phone, password);
-
-            if (user != null) {
-                // Đăng nhập thành công, chuyển sang MainActivity
-                Intent intent = new Intent(this, MainActivity.class);
-                intent.putExtra("loggedInUser", user); // Truyền user sang MainActivity
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK); // Xoá stack đăng nhập
-                startActivity(intent);
-            } else {
-                Toast.makeText(this, "Sai số điện thoại hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+            try {
+                User user = dbHelper.getUserByPhoneAndPassword(phone, password);
+                if (user != null) {
+                    Toast.makeText(this, "Đăng nhập thành công!", Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(this, MainActivity.class);
+                    intent.putExtra("currentUser", user); // nếu có xài
+//                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                } else {
+                    Toast.makeText(this, "Sai số điện thoại hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Lỗi truy vấn đăng nhập", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 }

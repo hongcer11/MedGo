@@ -25,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     ActivityMainBinding binding;
 
+    public static User currentUser=null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +74,11 @@ public class MainActivity extends AppCompatActivity {
         binding.fabDatlich.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, Booking1Activity.class))
         );
+        // Nhận user từ LoginActivity nếu có
+        Intent intent = getIntent();
+        if (intent != null && intent.hasExtra("currentUser")) {
+            currentUser = (User) intent.getSerializableExtra("currentUser");
+        }
     }
 
     private boolean loadFragment(@NonNull Fragment fragment) {
