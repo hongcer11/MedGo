@@ -83,22 +83,27 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     }
 
     public User getUserByPhoneAndPassword(String phone, String password) {
+        User user = null;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE phoneNumber=? AND password=?",
-                new String[]{phone, password});
+
+        Cursor cursor = db.rawQuery(
+                "SELECT * FROM User WHERE phone = ? AND password = ?",
+                new String[]{phone, password}
+        );
+
         if (cursor != null && cursor.moveToFirst()) {
-            User user = new User();
-            user.setUserId(cursor.getInt(cursor.getColumnIndexOrThrow("userId")));
-            user.setFullName(cursor.getString(cursor.getColumnIndexOrThrow("fullName")));
-            user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow("email")));
-            user.setPassword(cursor.getString(cursor.getColumnIndexOrThrow("password")));
-            user.setDob(cursor.getString(cursor.getColumnIndexOrThrow("dob")));
-            user.setPhoneNumber(cursor.getString(cursor.getColumnIndexOrThrow("phoneNumber")));
-            user.setGender(cursor.getString(cursor.getColumnIndexOrThrow("gender")));
-            user.setStatus(cursor.getString(cursor.getColumnIndexOrThrow("status")));
+            int id = cursor.getInt(cursor.getColumnIndexOrThrow("id"));
+            String fullName = cursor.getString(cursor.getColumnIndexOrThrow("fullName"));
+            String email = cursor.getString(cursor.getColumnIndexOrThrow("email"));
+            String gender = cursor.getString(cursor.getColumnIndexOrThrow("gender"));
+            String dob = cursor.getString(cursor.getColumnIndexOrThrow("dob"));
+            String address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+
+            user = new User(id, fullName, phone, email, password, gender, dob, address);
+
             cursor.close();
-            return user;
         }
-        return null;
+
+        return user;
     }
 }

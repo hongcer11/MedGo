@@ -2,24 +2,26 @@ package com.group4.ui.user;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.view.View;
 import android.widget.Toast;
 
-import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 
 import com.group4.data.db.SQLiteHelper;
 import com.group4.data.model.User;
 import com.group4.medgo.MainActivity;
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.ActivityLoginPasswordBinding;
+import com.group4.medgo.MainActivity;
+
+import java.io.IOException;
 
 public class LoginPasswordActivity extends AppCompatActivity {
 
     ActivityLoginPasswordBinding binding;
     SQLiteHelper dbHelper;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,22 +29,19 @@ public class LoginPasswordActivity extends AppCompatActivity {
         binding = ActivityLoginPasswordBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-
         addEvents();
     }
 
     private void addEvents() {
-        binding.tvForgotPassword.setOnClickListener(v -> {
-            startActivity(new Intent(LoginPasswordActivity.this, ForgetPasswordActivity.class));
-        });
+        binding.tvForgotPassword.setOnClickListener(v ->
+                startActivity(new Intent(this, ForgetPasswordActivity.class)));
 
-        binding.tvRegister.setOnClickListener(v -> {
-            startActivity(new Intent(LoginPasswordActivity.this, Register_Activity.class));
-        });
+        binding.tvRegister.setOnClickListener(v ->
+                startActivity(new Intent(this, Register_Activity.class)));
 
-        binding.loginOTP.setOnClickListener(v -> {
-            startActivity(new Intent(LoginPasswordActivity.this, LoginOTP_Activity.class));
-        });
+        binding.loginOTP.setOnClickListener(v ->
+                startActivity(new Intent(this, LoginOTP_Activity.class)));
+
 
         binding.btnLogin.setOnClickListener(view -> {
             String phone = binding.edtPhone.getText().toString().trim();

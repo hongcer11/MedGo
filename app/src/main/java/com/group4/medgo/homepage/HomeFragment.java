@@ -16,6 +16,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.group4.data.model.User;
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.FragmentHomeBinding;
 import com.group4.models.Partner;
@@ -25,6 +26,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.group4.ui.SearchActivity.SearchActivity;
+import com.group4.ui.user.LoginPasswordActivity;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -107,9 +109,16 @@ public class HomeFragment extends Fragment {
         adapter = new PartnerAdapter(getContext(), partners);
         binding.recyclerPartner.setAdapter(adapter);
 
+        // Xử lý khi bấm vào chữ "Đăng nhập"
+        binding.tvlogin.setOnClickListener(v -> {
+            Intent intent = new Intent(requireActivity(), LoginPasswordActivity.class);
+            startActivity(intent);
+        });
+
 
         return binding.getRoot();
     }
+
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
@@ -140,6 +149,7 @@ public class HomeFragment extends Fragment {
                 }
             });
         }
+
     }
 
 }

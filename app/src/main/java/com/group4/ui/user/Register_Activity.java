@@ -26,7 +26,6 @@ public class Register_Activity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         addEvents();
-
     }
 
     private void addEvents() {
