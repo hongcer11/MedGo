@@ -5,6 +5,9 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.database.Cursor;
 import android.database.SQLException;
+
+import com.group4.data.model.User;
+
 import java.io.*;
 
 public class SQLiteHelper extends SQLiteOpenHelper {
@@ -77,5 +80,25 @@ public class SQLiteHelper extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Có thể xử lý sau nếu nâng cấp DB
+    }
+
+    public User getUserByPhoneAndPassword(String phone, String password) {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM user WHERE phoneNumber=? AND password=?",
+                new String[]{phone, password});
+        if (cursor != null && cursor.moveToFirst()) {
+            User user = new User();
+            user.setUserId(cursor.getInt(cursor.getColumnIndexOrThrow("userId")));
+            user.setFullName(cursor.getString(cursor.getColumnIndexOrThrow("fullName")));
+            user.setEmail(cursor.getString(cursor.getColumnIndexOrThrow("email")));
+            user.setPassword(cursor.getString(cursor.getColumnIndexOrThrow("password")));
+            user.setDob(cursor.getString(cursor.getColumnIndexOrThrow("dob")));
+            user.setPhoneNumber(cursor.getString(cursor.getColumnIndexOrThrow("phoneNumber")));
+            user.setGender(cursor.getString(cursor.getColumnIndexOrThrow("gender")));
+            user.setStatus(cursor.getString(cursor.getColumnIndexOrThrow("status")));
+            cursor.close();
+            return user;
+        }
+        return null;
     }
 }

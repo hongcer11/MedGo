@@ -55,7 +55,6 @@ public class MainActivity extends AppCompatActivity {
             } else if (itemId == R.id.mnLichkham) {
                 selected = new AppointmentFragment();
             } else if (itemId == R.id.mnDatlich) {
-                //selected = new DoctorFragment(); // hoặc fragment khác
                 Intent intent = new Intent(this, Booking1Activity.class);
                 startActivity(intent);
                 return false; // Không cần load fragment
@@ -64,11 +63,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return loadFragment(selected);
         });
-
         // Hiển thị DoctorFragment
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(android.R.id.content, new DoctorFragment())
 //                .commit();
+        binding.fabDatlich.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, Booking1Activity.class))
+        );
     }
 
     private boolean loadFragment(@NonNull Fragment fragment) {
