@@ -3,13 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
     android:padding="16dp"
-=======
->>>>>>> 0e27635 (Reupload project after resolving conflicts and setup)
->>>>>>> a70cdef (Resolved all merge conflicts)
     android:background="#F9FAFB">
 
     <!-- Danh sách phiếu khám chưa thanh toán -->
