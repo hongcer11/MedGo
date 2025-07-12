@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_dialog"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <!-- Icon cảnh báo -->
+    <ImageView
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="@drawable/warning_red"
+        android:contentDescription="@string/warning"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Tiêu đề -->
+    <TextView
+        style="@style/TextHeading2"
+        android:id="@+id/tvTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bạn thực sự muốn\nhủy lịch khám này?"
+        android:gravity="center"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Nội dung phụ -->
+    <TextView
+        style="@style/TextBody2_500"
+        android:id="@+id/tvMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Phí dịch vụ sẽ không được hoàn trả.\nVui lòng cân nhắc trước khi hủy!"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+
+    <!-- Nút "Không" -->
+    <Button
+        style="@style/TextBody1_600"
+        android:id="@+id/btnCancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Không"
+        android:background="@drawable/btn_border_blue"
+        android:layout_marginBottom="12dp" />
+
+    <!-- Nút "Có" -->
+    <Button
+        style="@style/TextBody1_600"
+        android:id="@+id/btnConfirm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Có"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/btn_solid_blue" />
+
+</LinearLayout>

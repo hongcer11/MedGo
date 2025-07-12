@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="120dp"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:layout_margin="8dp">
+
+    <ImageView
+        android:id="@+id/partnerLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/bv_choray" />
+
+    <TextView
+        android:id="@+id/partnerName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Bệnh viện Chợ Rẫy"
+        android:gravity="center"
+        style="@style/TextBody3_500"
+        android:textColor="@color/neutral_1000"/>
+</LinearLayout>
