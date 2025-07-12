@@ -2,13 +2,8 @@ package com.group4.ui.appointment;
 
 
 import android.os.Bundle;
-<<<<<<< HEAD
-=======
-
 import androidx.fragment.app.Fragment;
 
-
->>>>>>> a70cdef (Resolved all merge conflicts)
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -69,7 +64,4 @@ public class CancelAppointmentFragment extends Fragment {
 }
 
 
-<<<<<<< HEAD
-=======
 
->>>>>>> a70cdef (Resolved all merge conflicts)
