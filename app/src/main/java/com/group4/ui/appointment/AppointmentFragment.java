@@ -1,6 +1,13 @@
 package com.group4.ui.appointment;
 
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+
+
+import androidx.fragment.app.Fragment;
+
+>>>>>>> a70cdef (Resolved all merge conflicts)
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +22,23 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.group4.medgo.R;
 
+<<<<<<< HEAD
+=======
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+
+
+import com.group4.medgo.R;
+
+>>>>>>> a70cdef (Resolved all merge conflicts)
 public class AppointmentFragment extends Fragment {
 
     private Fragment currentFragment;
@@ -52,3 +76,7 @@ public class AppointmentFragment extends Fragment {
         }
     }
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> a70cdef (Resolved all merge conflicts)

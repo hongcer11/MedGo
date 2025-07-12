@@ -2,9 +2,30 @@ package com.group4.ui.appointment;
 
 
 import android.os.Bundle;
+<<<<<<< HEAD
+=======
+
+import androidx.fragment.app.Fragment;
+
+
+>>>>>>> a70cdef (Resolved all merge conflicts)
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import com.group4.models.Appointment;
+import com.group4.medgo.R;
+import com.group4.ui.common.AppointmentAdapter;
+
+import java.util.ArrayList;
+import java.util.List;
+
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -48,3 +69,7 @@ public class CancelAppointmentFragment extends Fragment {
 }
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a70cdef (Resolved all merge conflicts)

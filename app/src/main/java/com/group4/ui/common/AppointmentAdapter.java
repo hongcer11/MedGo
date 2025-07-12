@@ -21,7 +21,10 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
         this.appointmentList = appointmentList;
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> a70cdef (Resolved all merge conflicts)
     @NonNull
     @Override
     public AppointmentViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -46,11 +49,18 @@ public class AppointmentAdapter extends RecyclerView.Adapter<AppointmentAdapter.
 
     @Override
     public int getItemCount() {
+<<<<<<< HEAD
         return appointmentList.size();
     }
 
     public static class AppointmentViewHolder extends RecyclerView.ViewHolder {
 
+=======
+        return appointmentList != null ? appointmentList.size() : 0;
+    }
+
+    public static class AppointmentViewHolder extends RecyclerView.ViewHolder {
+>>>>>>> a70cdef (Resolved all merge conflicts)
         TextView tvCode, tvName, tvHospital, tvSpecialty, tvService, tvStatus, tvDate, tvTime;
 
         public AppointmentViewHolder(@NonNull View itemView) {
