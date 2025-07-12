@@ -63,15 +63,13 @@ public class MainActivity extends AppCompatActivity {
             }
             return loadFragment(selected);
         });
-        // ====== NEW: Xử lý FloatingActionButton ======
-        binding.fabDatlich.setOnClickListener(v ->
-                startActivity(new Intent(MainActivity.this, Booking1Activity.class))
-        );
-        // =============================================
         // Hiển thị DoctorFragment
 //        getSupportFragmentManager().beginTransaction()
 //                .replace(android.R.id.content, new DoctorFragment())
 //                .commit();
+        binding.fabDatlich.setOnClickListener(v ->
+                startActivity(new Intent(MainActivity.this, Booking1Activity.class))
+        );
     }
 
     private boolean loadFragment(@NonNull Fragment fragment) {
