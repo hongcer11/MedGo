@@ -1,5 +1,6 @@
 package com.group4.medgo.homepage;
 
+import android.net.Uri;
 import android.os.Bundle;
 
 import android.content.Intent;
@@ -15,18 +16,23 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.group4.data.model.Partner;
 import com.group4.data.model.User;
 import com.group4.medgo.MainActivity;
 import com.group4.medgo.R;
 import com.group4.medgo.databinding.FragmentHomeBinding;
-import com.group4.models.Partner;
 import com.group4.ui.common.PartnerAdapter;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import com.group4.ui.SearchActivity.SearchActivity;
+import com.group4.ui.news.NewsListFragment;
 import com.group4.ui.user.LoginPasswordActivity;
 
 /**
@@ -35,7 +41,6 @@ import com.group4.ui.user.LoginPasswordActivity;
  * create an instance of this fragment.
  */
 public class HomeFragment extends Fragment {
-
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -91,7 +96,6 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentHomeBinding.inflate(inflater, container, false);
-
 
         partners = new ArrayList<>();
         partners.add(new Partner(R.drawable.bv_choray, "Bệnh viện Chợ Rẫy"));
@@ -150,11 +154,57 @@ public class HomeFragment extends Fragment {
                 }
             });
         }
+        // Xem tin tức
+        View newsContainer = view.findViewById(R.id.newsContainer);
+        View btnNewsMore = view.findViewById(R.id.btnNewsMore);
+        View newsImage = view.findViewById(R.id.newsImage);
 
-//        binding.tvlogin.setOnClickListener(v -> {
-//            Intent intent = new Intent(requireActivity(), LoginPasswordActivity.class);
-//            startActivity(intent);
-//        });
+        View.OnClickListener newsClickListener = new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Chuyển sang NewsListFragment
+                Fragment newsListFragment = new NewsListFragment();
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, newsListFragment) // Sử dụng đúng ID vùng chứa
+                        .addToBackStack(null) // Cho phép quay lại bằng nút back
+                        .commit();
+            }
+        };
+        newsContainer.setOnClickListener(newsClickListener);
+        btnNewsMore.setOnClickListener(newsClickListener);
+        newsImage.setOnClickListener(newsClickListener);
+
+        binding.btnChatbot.setOnClickListener(v -> {
+            BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
+            View sheetView = LayoutInflater.from(requireContext())
+                    .inflate(R.layout.contacthelp_dialog, null);
+
+            TextView optionCall = sheetView.findViewById(R.id.optionCall);
+            TextView optionChat = sheetView.findViewById(R.id.optionChatbot);
+            ImageView btnClose = sheetView.findViewById(R.id.btnClose);
+
+            optionCall.setOnClickListener(view1 -> {
+                bottomSheetDialog.dismiss();
+                Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel:19001234"));
+                startActivity(intent);
+            });
+
+            optionChat.setOnClickListener(view2 -> {
+                bottomSheetDialog.dismiss();
+                // Mở ChatbotFragment
+                Fragment chatbotFragment = new ChatbotFragment(); // Đảm bảo bạn đã tạo class này
+                requireActivity().getSupportFragmentManager()
+                        .beginTransaction()
+                        .replace(R.id.container, chatbotFragment)
+                        .addToBackStack(null)
+                        .commit();
+            });
+            btnClose.setOnClickListener(view3 -> bottomSheetDialog.dismiss());
+
+            bottomSheetDialog.setContentView(sheetView);
+            bottomSheetDialog.show();
+        });
         if (MainActivity.currentUser != null) {
             String fullName = MainActivity.currentUser.getFullName().trim();
             String[] parts = fullName.split(" ");
@@ -172,6 +222,7 @@ public class HomeFragment extends Fragment {
                 startActivity(intent);
             });
         }
+
     }
     @Override
     public void onDestroyView() {

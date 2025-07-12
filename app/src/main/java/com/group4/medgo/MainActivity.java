@@ -2,6 +2,7 @@ package com.group4.medgo;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,7 @@ import com.group4.data.db.SQLiteHelper;
 
 import com.group4.data.model.User;
 import com.group4.medgo.databinding.ActivityMainBinding;
+import com.group4.medgo.homepage.ChatbotFragment;
 import com.group4.medgo.homepage.HomeFragment;
 import com.group4.ui.accountsetting.AccountSettingFragment;
 import com.group4.ui.appointment.AppointmentFragment;
@@ -67,10 +69,23 @@ public class MainActivity extends AppCompatActivity {
             }
             return loadFragment(selected);
         });
-        // Hiển thị DoctorFragment
-//        getSupportFragmentManager().beginTransaction()
-//                .replace(android.R.id.content, new DoctorFragment())
-//                .commit();
+
+        getSupportFragmentManager().addOnBackStackChangedListener(() -> {
+            Fragment fragment = getSupportFragmentManager().findFragmentById(R.id.container);
+            View bottomAppBar = findViewById(R.id.bottomAppBar);
+            View fabDatlich = findViewById(R.id.fabDatlich);
+
+            if (fragment instanceof ChatbotFragment) {
+                // Nếu đang ở ChatbotFragment, ẩn
+                if (bottomAppBar != null) bottomAppBar.setVisibility(View.GONE);
+                if (fabDatlich != null) fabDatlich.setVisibility(View.GONE);
+            } else {
+                // Nếu không phải, hiện lại
+                if (bottomAppBar != null) bottomAppBar.setVisibility(View.VISIBLE);
+                if (fabDatlich != null) fabDatlich.setVisibility(View.VISIBLE);
+            }
+        });
+
         binding.fabDatlich.setOnClickListener(v ->
                 startActivity(new Intent(MainActivity.this, Booking1Activity.class))
         );
