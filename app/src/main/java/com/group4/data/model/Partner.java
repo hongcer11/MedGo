@@ -1,4 +1,4 @@
-package com.group4.models;
+package com.group4.data.model;
 
 public class Partner {
     int partnerLogo;
@@ -27,4 +27,3 @@ public class Partner {
         this.partnerName = partnerName;
     }
 }
-
